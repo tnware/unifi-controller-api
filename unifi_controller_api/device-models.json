@@ -1,0 +1,5872 @@
+{
+    "BZ2": {
+        "name": "UAP",
+        "names": {
+            "abbreviation": "UAP",
+            "fullName": "Access Point",
+            "sku": "UAP"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAP",
+            "ic": "6545A-UAP",
+            "displayName": "UniFi® AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "zh": true
+        },
+        "radios": {
+            "ng": {
+                "maxPower": 23,
+                "gain": 5
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "BZ2LR": {
+        "name": "UAP LR",
+        "names": {
+            "abbreviation": "UAP LR",
+            "fullName": "Access Point Long-Range",
+            "sku": "UAP-LR"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAP",
+            "ic": "6545A-UAP",
+            "displayName": "UniFi® AP LR"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "zh": true
+        },
+        "radios": {
+            "ng": {
+                "maxPower": 28,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "G7LR": {
+        "name": "U7 LR",
+        "names": {
+            "abbreviation": "U7 LR",
+            "fullName": "Access Point WiFi 7 Long-Range",
+            "sku": "U7-LR"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® 7 Long-Range Access Point"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "be": true,
+            "bandsteer": true,
+            "atfDisabled": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 26,
+                "gain": 6
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 4
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "S216150": {
+        "name": "US 16 150W",
+        "names": {
+            "abbreviation": "US 16 PoE 150W",
+            "fullName": "Switch 16 PoE (150 W)",
+            "sku": "US-16-150W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 16 150W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true,
+            "fan": "simple"
+        },
+        "ports": {
+            "standard": 16,
+            "sfp": [
+                17,
+                18
+            ]
+        },
+        "power": {
+            "capacity": 150
+        },
+        "adoptability": "adoptable"
+    },
+    "S224250": {
+        "name": "US 24 250W",
+        "names": {
+            "abbreviation": "US 24 PoE 250W",
+            "fullName": "Switch 24 PoE (250 W)",
+            "sku": "US-24-250W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 24 250W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true,
+            "fan": "alwayson"
+        },
+        "ports": {
+            "standard": 24,
+            "sfp": [
+                25,
+                26
+            ]
+        },
+        "power": {
+            "capacity": 250
+        },
+        "adoptability": "adoptable"
+    },
+    "S224500": {
+        "name": "US 24 500W",
+        "names": {
+            "abbreviation": "US 24 PoE 500W",
+            "fullName": "Switch 24 PoE (500 W)",
+            "sku": "US-24-500W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 24 500W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true,
+            "fan": "alwayson"
+        },
+        "ports": {
+            "standard": 24,
+            "sfp": [
+                25,
+                26
+            ]
+        },
+        "power": {
+            "capacity": 500
+        },
+        "adoptability": "adoptable"
+    },
+    "S248500": {
+        "name": "US 48 500W",
+        "names": {
+            "abbreviation": "US 48 PoE 500W",
+            "fullName": "Switch 48 PoE (500 W)",
+            "sku": "US-48-500W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 48 500W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true,
+            "fan": "alwayson"
+        },
+        "ports": {
+            "standard": 48,
+            "sfp": [
+                51,
+                52
+            ],
+            "plus": [
+                49,
+                50
+            ]
+        },
+        "power": {
+            "capacity": 500
+        },
+        "adoptability": "adoptable"
+    },
+    "S248750": {
+        "name": "US 48 750W",
+        "names": {
+            "abbreviation": "US 48 PoE 750W",
+            "fullName": "Switch 48 PoE (750 W)",
+            "sku": "US-48-750W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 48 750W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true,
+            "fan": "alwayson"
+        },
+        "ports": {
+            "standard": 48,
+            "sfp": [
+                51,
+                52
+            ],
+            "plus": [
+                49,
+                50
+            ]
+        },
+        "power": {
+            "capacity": 750
+        },
+        "adoptability": "adoptable"
+    },
+    "S28150": {
+        "name": "US 8 150W",
+        "names": {
+            "abbreviation": "US 8 PoE 150W",
+            "fullName": "Switch 8 PoE (150 W)",
+            "sku": "US-8-150W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 8 150W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 8,
+            "sfp": [
+                9,
+                10
+            ]
+        },
+        "power": {
+            "capacity": 150
+        },
+        "adoptability": "adoptable"
+    },
+    "U2HSR": {
+        "name": "UAP Outdoor+",
+        "names": {
+            "abbreviation": "UAP Outdoor+",
+            "fullName": "Access Point Outdoor+",
+            "sku": "UAP-Outdoor+"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPOUTDOOR",
+            "ic": "6545A-UAPOUTDOOR",
+            "displayName": "UniFi® Outdoor+"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "zh": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "ng": {
+                "maxPower": 30,
+                "gain": 5
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U2IW": {
+        "name": "UAP IW",
+        "names": {
+            "abbreviation": "UAP IW",
+            "fullName": "Access Point In-Wall",
+            "sku": "UAP-IW"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPIW",
+            "ic": "6545A-UAPIW",
+            "displayName": "UniFi® AP In-Wall"
+        },
+        "deviceCapabilities": [
+            "SWITCH",
+            "ACCESS_POINT"
+        ],
+        "hybrid": "uap+usw",
+        "features": {
+            "zh": true
+        },
+        "ports": {
+            "standard": 2
+        },
+        "radios": {
+            "ng": {
+                "maxPower": 18,
+                "gain": 1
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U2L48": {
+        "name": "UAP LR",
+        "names": {
+            "abbreviation": "UAP LR",
+            "fullName": "Access Point Long-Range",
+            "sku": "UAP-LR"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAP",
+            "ic": "6545A-UAP",
+            "displayName": "UniFi® AP LR"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "radios": {
+            "ng": {
+                "maxPower": 29,
+                "gain": 0
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U2Lv2": {
+        "name": "UAP LRv2",
+        "names": {
+            "abbreviation": "UAP LR",
+            "fullName": "Access Point Long-Range",
+            "sku": "UAP-LRv2"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAP",
+            "ic": "6545A-UAP",
+            "displayName": "UniFi® AP LR"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "zh": true
+        },
+        "radios": {
+            "ng": {
+                "maxPower": 28,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U2M": {
+        "name": "Mini",
+        "names": {
+            "abbreviation": "UAP Mini",
+            "fullName": "Access Point Mini",
+            "sku": "UAP-Mini"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPM",
+            "ic": "6545A-UAPM",
+            "displayName": "UniFi® Mini"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "radios": {
+            "ng": {
+                "maxPower": 18,
+                "gain": 0
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U2O": {
+        "name": "Outdoor",
+        "names": {
+            "abbreviation": "UAP Outdoor",
+            "fullName": "Access Point Outdoor",
+            "sku": "UAP-Outdoor"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-M2",
+            "ic": "6545A-M2",
+            "displayName": "UniFi® AP Outdoor 2"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "zh": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "ng": {
+                "maxPower": 28,
+                "gain": 6
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U2S48": {
+        "name": "UAP",
+        "names": {
+            "abbreviation": "UAP",
+            "fullName": "Access Point",
+            "sku": "UAP"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAP",
+            "ic": "6545A-UAP",
+            "displayName": "UniFi® AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "radios": {
+            "ng": {
+                "maxPower": 23,
+                "gain": 0
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U2Sv2": {
+        "name": "UAPv2",
+        "names": {
+            "abbreviation": "UAP",
+            "fullName": "Access Point",
+            "sku": "UAPv2"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAP",
+            "ic": "6545A-UAP",
+            "displayName": "UniFi® AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "zh": true
+        },
+        "radios": {
+            "ng": {
+                "maxPower": 23,
+                "gain": 0
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U5O": {
+        "name": "UAP Outdoor5",
+        "names": {
+            "abbreviation": "UAP Outdoor5",
+            "fullName": "Access Point Outdoor 5",
+            "sku": "UAP-Outdoor5"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-M5",
+            "ic": "6545A-M5",
+            "displayName": "UniFi® AP Outdoor 5"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "dfs": true,
+            "zh": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 27,
+                "gain": 6
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U6ENT": {
+        "name": "U6 Enterprise",
+        "names": {
+            "abbreviation": "U6 Enterprise",
+            "fullName": "Access Point WiFi 6 Enterprise",
+            "sku": "U6-Enterprise"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 26,
+                "gain": 3
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 5
+            },
+            "6e": {
+                "maxPower": 26,
+                "gain": 6
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U6ENTIW": {
+        "name": "U6 Enterprise IW",
+        "names": {
+            "abbreviation": "U6 Enterprise IW",
+            "fullName": "Access Point WiFi 6 Enterprise In-Wall",
+            "sku": "U6-Enterprise-IW"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "SWITCH",
+            "ACCESS_POINT"
+        ],
+        "hybrid": "uap+usw",
+        "ports": {
+            "standard": 4
+        },
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": false,
+            "atfDisabled": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 26,
+                "gain": 6
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 4
+            },
+            "6e": {
+                "maxPower": 26,
+                "gain": 6
+            }
+        },
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "417f50af-9ec0-4536-b525-06385c9d9fc9",
+                "configured": "be99fb0e-4457-4d68-a4a4-e419fcfbf1e6"
+            }
+        ]
+    },
+    "U6EXT": {
+        "name": "U6 Extender",
+        "names": {
+            "abbreviation": "U6 Extender",
+            "fullName": "Access Point WiFi 6 Extender",
+            "sku": "U6-Extender"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-U6EXTR",
+            "ic": "6545A-U6EXTR",
+            "displayName": "UniFi® Access Point WiFi 6 Extender"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 6
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 5
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U6IW": {
+        "name": "U6 IW",
+        "names": {
+            "abbreviation": "U6 IW",
+            "fullName": "Access Point WiFi 6 In-Wall",
+            "sku": "U6-IW"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-U6IWR",
+            "ic": "6545A-U6IWR",
+            "displayName": "UniFi® 6 In-Wall AP"
+        },
+        "deviceCapabilities": [
+            "SWITCH",
+            "ACCESS_POINT"
+        ],
+        "hybrid": "uap+usw",
+        "ports": {
+            "standard": 4
+        },
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "883133c2-2781-4478-aa68-3338e6f3aa3c",
+                "configured": "6ffe1fae-7a9e-4f70-bc82-8fcf530f9ddc"
+            }
+        ]
+    },
+    "U6M": {
+        "name": "U6 Mesh",
+        "names": {
+            "abbreviation": "U6 Mesh",
+            "fullName": "Access Point WiFi 6 Mesh",
+            "sku": "U6-Mesh"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-U6MESHR",
+            "ic": "6545A-U6MESHR",
+            "displayName": "UniFi® Access Point WiFi 6 Mesh"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "519dbaaa-123c-4ac7-a906-0d38a500bc54",
+                "configured": "3be3c588-5b16-463d-9d3d-7a1616de451e"
+            }
+        ]
+    },
+    "U7E": {
+        "name": "UAP AC",
+        "names": {
+            "abbreviation": "UAP AC",
+            "fullName": "Access Point AC",
+            "sku": "UAP-AC"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPAC",
+            "ic": "6545A-UAPAC",
+            "displayName": "UniFi® AC"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "ac": true,
+            "brcm": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 24,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 4
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7EDU": {
+        "name": "UAP AC EDU",
+        "names": {
+            "abbreviation": "UAP AC EDU",
+            "fullName": "Access Point AC EDU",
+            "sku": "UAP-AC-EDU"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPACPRO",
+            "ic": "6545A-UAPACPRO",
+            "displayName": "UniFi® AC EDU AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 22,
+                "gain": 3
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7ENT": {
+        "name": "U7 Enterprise",
+        "names": {
+            "abbreviation": "U7 Enterprise",
+            "fullName": "Access Point WiFi 7 Enterprise",
+            "sku": "U7-Enterprise"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "be": true,
+            "bandsteer": true,
+            "atfDisabled": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 26,
+                "gain": 3
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 5
+            },
+            "6e": {
+                "maxPower": 26,
+                "gain": 6
+            },
+            "swift": {
+                "maxPower": 0,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7Ev2": {
+        "name": "UAP AC",
+        "names": {
+            "abbreviation": "UAP AC",
+            "fullName": "Access Point AC",
+            "sku": "UAP-AC"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPAC",
+            "ic": "6545A-UAPAC",
+            "displayName": "UniFi® AC"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "ac": true,
+            "brcm": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 24,
+                "gain": 3
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 4
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7HD": {
+        "name": "UAP AC HD",
+        "names": {
+            "abbreviation": "UAP AC HD",
+            "fullName": "Access Point AC HD",
+            "sku": "UAP-AC-HD"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPACHD",
+            "ic": "6545A-UAPACHD",
+            "displayName": "UniFi® AC HD AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 25,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7IW": {
+        "name": "UAP AC IW",
+        "names": {
+            "abbreviation": "UAP AC IW",
+            "fullName": "Access Point AC In-Wall",
+            "sku": "UAP-AC-IW"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPACIW",
+            "ic": "6545A-UAPACIW",
+            "displayName": "UniFi® AC In-Wall AP"
+        },
+        "deviceCapabilities": [
+            "SWITCH",
+            "ACCESS_POINT"
+        ],
+        "hybrid": "uap+usw",
+        "ports": {
+            "standard": 2
+        },
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 20,
+                "gain": 1
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 2
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7IWP": {
+        "name": "UAP AC IW Pro",
+        "names": {
+            "abbreviation": "UAP AC IW Pro",
+            "fullName": "Access Point AC In-Wall Pro",
+            "sku": "UAP-AC-IW-Pro"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPACIWP",
+            "ic": "6545A-UAPACIWP",
+            "displayName": "UniFi® AC In-Wall Pro AP"
+        },
+        "deviceCapabilities": [
+            "SWITCH",
+            "ACCESS_POINT"
+        ],
+        "hybrid": "uap+usw",
+        "ports": {
+            "standard": 2
+        },
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 22,
+                "gain": 6
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 5
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7LR": {
+        "name": "UAP AC LR",
+        "names": {
+            "abbreviation": "UAP AC LR",
+            "fullName": "Access Point AC Long-Range",
+            "sku": "UAP-AC-LR"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPACLR",
+            "ic": "6545A-UAPACLR",
+            "displayName": "UniFi® AC LR AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 22,
+                "gain": 3
+            },
+            "ng": {
+                "maxPower": 24,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7LT": {
+        "name": "UAP AC Lite",
+        "names": {
+            "abbreviation": "UAP AC Lite",
+            "fullName": "Access Point AC Lite",
+            "sku": "UAP-AC-Lite"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPACL",
+            "ic": "6545A-UAPACL",
+            "displayName": "UniFi® AC Lite AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 20,
+                "gain": 3
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7MP": {
+        "name": "UAP AC M Pro",
+        "names": {
+            "abbreviation": "UAP AC Mesh Pro",
+            "fullName": "Access Point AC Mesh Pro",
+            "sku": "UAP-AC-M-Pro"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPACMPRO",
+            "ic": "6545A-UAPACMPRO",
+            "displayName": "UniFi® AC Mesh Pro AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 22,
+                "gain": 8
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 8
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7MSH": {
+        "name": "UAP AC M",
+        "names": {
+            "abbreviation": "UAP AC Mesh",
+            "fullName": "Access Point AC Mesh",
+            "sku": "UAP-AC-M"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPACM",
+            "ic": "6545A-UAPACM",
+            "displayName": "UniFi® AC Mesh AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 20,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7NHD": {
+        "name": "nanoHD",
+        "names": {
+            "abbreviation": "UAP nanoHD",
+            "fullName": "Access Point nanoHD",
+            "sku": "UAP-nanoHD"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPHDNANO",
+            "ic": "6545A-UAPHDNANO",
+            "displayName": "UniFi® nanoHD AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true,
+            "atfDisabled": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7O": {
+        "name": "UAP AC Outdoor",
+        "names": {
+            "abbreviation": "UAP AC Outdoor",
+            "fullName": "Access Point AC Outdoor",
+            "sku": "UAP-AC-Outdoor"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPAC",
+            "ic": "6545A-UAPAC",
+            "displayName": "UniFi® AC Outdoor"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "ac": true,
+            "brcm": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 24,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 4
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7P": {
+        "name": "UAP Pro",
+        "names": {
+            "abbreviation": "UAP Pro",
+            "fullName": "Access Point Pro",
+            "sku": "UAP-Pro"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPRO",
+            "ic": "6545A-UAPRO",
+            "displayName": "UniFi® Pro"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "dfs": true,
+            "bandsteer": true,
+            "zh": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 23,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 30,
+                "gain": 5
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7PG2": {
+        "name": "UAP AC Pro",
+        "names": {
+            "abbreviation": "UAP AC Pro",
+            "fullName": "Access Point AC Pro",
+            "sku": "UAP-AC-Pro"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPACPRO",
+            "ic": "6545A-UAPACPRO",
+            "displayName": "UniFi® AC Pro AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 23,
+                "gain": 3
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7PRO": {
+        "name": "U7 Pro",
+        "names": {
+            "abbreviation": "U7 Pro",
+            "fullName": "Access Point WiFi 7 Pro",
+            "sku": "U7-Pro"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "be": true,
+            "bandsteer": true,
+            "atfDisabled": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 26,
+                "gain": 3
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 5
+            },
+            "6e": {
+                "maxPower": 26,
+                "gain": 6
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7SHD": {
+        "name": "UAP AC SHD",
+        "names": {
+            "abbreviation": "UAP AC SHD",
+            "fullName": "Access Point AC SHD",
+            "sku": "UAP-AC-SHD"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPACSHD",
+            "ic": "6545A-UAPACSHD",
+            "displayName": "UniFi® AC SHD AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true,
+            "airTime": true,
+            "airView": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 8
+            },
+            "ng": {
+                "maxPower": 25,
+                "gain": 6
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "U7UKU": {
+        "name": "Swiss Army Knife Ultra",
+        "names": {
+            "abbreviation": "UK-Ultra",
+            "fullName": "Swiss Army Knife Ultra",
+            "sku": "UK-Ultra"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 20,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UACCMPOEAF": {
+        "name": "Magic PoE",
+        "names": {
+            "abbreviation": "Magic PoE",
+            "fullName": "UACC Magic PoE",
+            "sku": "Magic PoE"
+        },
+        "type": "uacc",
+        "deviceCapabilities": [
+            "WIRELESS_SWITCH"
+        ],
+        "ports": {
+            "standard": 1
+        },
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "0ff18683-789e-41c8-943b-c24c9def7fd8",
+                "configured": "4dd748ce-d16d-49e3-9e6d-f1642423b77b"
+            }
+        ]
+    },
+    "UAE6": {
+        "name": "U6 Extender EA",
+        "names": {
+            "abbreviation": "U6 Extender",
+            "fullName": "Access Point WiFi 6 Extender",
+            "sku": "U6-Extender-EA"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "c1903f50-9391-44a3-9b27-7b5a370da94f",
+                "configured": "70f9ce41-e4ea-40e7-9ffe-1f42635d3e52"
+            }
+        ]
+    },
+    "UAIW6": {
+        "name": "U6 IW EA",
+        "names": {
+            "abbreviation": "U6 IW",
+            "fullName": "Access Point WiFi 6 In-Wall",
+            "sku": "U6-IW-EA"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-U6IW",
+            "ic": "6545A-U6IW",
+            "displayName": "UniFi® 6 In-Wall AP"
+        },
+        "deviceCapabilities": [
+            "SWITCH",
+            "ACCESS_POINT"
+        ],
+        "hybrid": "uap+usw",
+        "ports": {
+            "standard": 4
+        },
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "f06176a5-109f-45f0-9734-8d3be87f6db8",
+                "configured": "53860c6c-2ca8-450b-9138-6d8fbb300fb5"
+            }
+        ]
+    },
+    "UAL6": {
+        "name": "U6 Lite",
+        "names": {
+            "abbreviation": "U6 Lite",
+            "fullName": "Access Point WiFi 6 Lite",
+            "sku": "U6-Lite"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-U6LITE",
+            "ic": "6545A-U6LITE",
+            "displayName": "UniFi® 6 Lite Access Point"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "1e6e3f47-38e5-429c-a94f-01475e44e9d0",
+                "configured": "5a65862d-604b-4ff1-8177-940aabca7d21"
+            }
+        ]
+    },
+    "UALR6": {
+        "name": "U6 LR EA",
+        "names": {
+            "abbreviation": "U6 LR",
+            "fullName": "Access Point WiFi 6 Long-Range",
+            "sku": "U6-LR-EA"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-U6LR",
+            "ic": "6545A-U6LR",
+            "displayName": "UniFi® 6 Long-Range Access Point"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UALR6v2": {
+        "name": "U6 LR",
+        "names": {
+            "abbreviation": "U6 LR",
+            "fullName": "Access Point WiFi 6 Long-Range",
+            "sku": "U6-LR"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-U6LR",
+            "ic": "6545A-U6LR",
+            "displayName": "UniFi® 6 Long-Range Access Point"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "883ff5a6-f60a-4b56-a0a3-9e22bf1b91f2",
+                "configured": "3e6e0806-6562-4a01-b6cd-e3409c5f9627"
+            }
+        ]
+    },
+    "UALR6v3": {
+        "name": "U6 LR",
+        "names": {
+            "abbreviation": "U6 LR",
+            "fullName": "Access Point WiFi 6 Long-Range",
+            "sku": "U6-LR"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-U6LR",
+            "ic": "6545A-U6LR",
+            "displayName": "UniFi® 6 Long-Range Access Point"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UALRPL6": {
+        "name": "U6 LR+",
+        "names": {
+            "abbreviation": "U6 LR+",
+            "fullName": "Access Point U6 Long-Range+",
+            "sku": "U6-PLUS-LR"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true,
+            "outdoorModeSupport": false
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UAM6": {
+        "name": "U6 Mesh EA",
+        "names": {
+            "abbreviation": "U6 Mesh",
+            "fullName": "Access Point WiFi 6 Mesh",
+            "sku": "U6-Mesh-EA"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UAP6": {
+        "name": "U6 LR",
+        "names": {
+            "abbreviation": "U6 LR",
+            "fullName": "Access Point WiFi 6 Long-Range",
+            "sku": "U6-LR"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-U6LR",
+            "ic": "6545A-U6LR",
+            "displayName": "UniFi® 6 Long-Range Access Point"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UAP6MP": {
+        "name": "U6 Pro",
+        "names": {
+            "abbreviation": "U6 Pro",
+            "fullName": "Access Point WiFi 6 Pro",
+            "sku": "U6-Pro"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-U6PROR",
+            "ic": "6545A-U6PROR",
+            "displayName": "UniFi® Access Point WiFi 6 Professional"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 6
+            },
+            "ng": {
+                "maxPower": 25,
+                "gain": 6
+            }
+        },
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "03cb814b-0000-40df-9d6f-7c8271da8a89",
+                "configured": "892d0802-4ac4-429b-b937-d0e604ebdee7"
+            }
+        ]
+    },
+    "UAPL6": {
+        "name": "U6+",
+        "names": {
+            "abbreviation": "U6+",
+            "fullName": "Access Point WiFi 6+",
+            "sku": "U6+"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ax": true,
+            "bandsteer": true,
+            "atfDisabled": true,
+            "outdoorModeSupport": false
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UASXG": {
+        "name": "UAS XG",
+        "names": {
+            "abbreviation": "UAS XG",
+            "fullName": "Application Server XG",
+            "sku": "UAS-XG"
+        },
+        "type": "uas",
+        "deviceCapabilities": [
+            "SERVER",
+            "NETWORK_APPLICATION"
+        ],
+        "bleServices": [
+            {
+                "default": "6868ac9f-fb18-4f2c-9b01-50ab0743907d",
+                "configured": "8eeb0dea-f4cd-4c8a-8e6e-5e385ca18dae"
+            }
+        ],
+        "adoptability": "standalone"
+    },
+    "UBB": {
+        "name": "UBB",
+        "names": {
+            "abbreviation": "UBB",
+            "fullName": "Building-to-Building Bridge",
+            "sku": "UBB"
+        },
+        "type": "ubb",
+        "compliance": {
+            "fcc": "SWX-UBB",
+            "ic": "6545A-UBB",
+            "displayName": "UniFi® Building-to-Building Bridge"
+        },
+        "deviceCapabilities": [
+            "BUILDING_BRIDGE"
+        ],
+        "adoptability": "adoptable"
+    },
+    "UBBXG": {
+        "name": "UBB XG",
+        "names": {
+            "abbreviation": "UBB XG",
+            "fullName": "Building-to-Building Bridge XG",
+            "sku": "UBB-XG"
+        },
+        "type": "ubb",
+        "compliance": {
+            "fcc": "SWX-UBBXG",
+            "ic": "6545A-UBBXG",
+            "displayName": "Building-to-Building Bridge XG"
+        },
+        "deviceCapabilities": [
+            "BUILDING_BRIDGE"
+        ],
+        "adoptability": "adoptable"
+    },
+    "UCI": {
+        "name": "Cable Internet",
+        "names": {
+            "abbreviation": "UCI",
+            "fullName": "UniFi Cable Internet",
+            "sku": "UCI"
+        },
+        "type": "uci",
+        "deviceCapabilities": [],
+        "adoptability": "adoptable",
+        "diagram": [
+            "01"
+        ],
+        "ports": {
+            "standard": 1
+        }
+    },
+    "UCK": {
+        "name": "UCK",
+        "names": {
+            "abbreviation": "UCK",
+            "fullName": "Cloud Key",
+            "sku": "UCK"
+        },
+        "type": "uck",
+        "compliance": {
+            "fcc": "SWX-UCCK",
+            "ic": "6545A-UCCK",
+            "displayName": "UniFi® Cloud Key"
+        },
+        "deviceCapabilities": [
+            "CLOUD_KEY",
+            "NETWORK_APPLICATION"
+        ],
+        "adoptability": "standalone"
+    },
+    "UCK-v2": {
+        "name": "UCK",
+        "names": {
+            "abbreviation": "UCK",
+            "fullName": "Cloud Key",
+            "sku": "UCK"
+        },
+        "type": "uck",
+        "compliance": {
+            "fcc": "SWX-UCCK",
+            "ic": "6545A-UCCK",
+            "displayName": "UniFi® Cloud Key"
+        },
+        "deviceCapabilities": [
+            "CLOUD_KEY",
+            "NETWORK_APPLICATION"
+        ],
+        "adoptability": "standalone"
+    },
+    "UCK-v3": {
+        "name": "UCK",
+        "names": {
+            "abbreviation": "UCK",
+            "fullName": "Cloud Key",
+            "sku": "UCK"
+        },
+        "type": "uck",
+        "compliance": {
+            "fcc": "SWX-UCCK",
+            "ic": "6545A-UCCK",
+            "displayName": "UniFi® Cloud Key"
+        },
+        "deviceCapabilities": [
+            "CLOUD_KEY",
+            "NETWORK_APPLICATION"
+        ],
+        "bleServices": [
+            {
+                "default": "bc3caa52-e57c-4eb3-a609-ed7310564517",
+                "configured": "054e1ac8-1ad8-4c10-a0de-e55fc4f268e5"
+            }
+        ],
+        "adoptability": "standalone"
+    },
+    "UCKENT": {
+        "name": "UCK Enterprise",
+        "names": {
+            "abbreviation": "UCK Ent",
+            "fullName": "Cloud Key Enterprise",
+            "sku": "UCK-Enterprise"
+        },
+        "type": "uck",
+        "compliance": {
+            "fcc": "SWX-CKEP",
+            "ic": "6545A-CKEP",
+            "displayName": "UniFi® Cloud Key Enterprise"
+        },
+        "deviceCapabilities": [
+            "CLOUD_KEY",
+            "NETWORK_APPLICATION"
+        ],
+        "bleServices": [
+            {
+                "default": "4c96be8e-9a26-40a7-8dbb-00f59314e7de",
+                "configured": "add7492c-e71c-420f-9f02-881f068e955f",
+                "features": {
+                    "ucore": true
+                }
+            }
+        ],
+        "adoptability": "standalone"
+    },
+    "UCKG2": {
+        "name": "UCK G2",
+        "names": {
+            "abbreviation": "UCK G2",
+            "fullName": "Cloud Key Gen2",
+            "sku": "UCK-G2"
+        },
+        "type": "uck",
+        "compliance": {
+            "fcc": "SWX-UCKG2",
+            "ic": "6545A-UCKG2",
+            "displayName": "UniFi® Cloud Key Gen2"
+        },
+        "deviceCapabilities": [
+            "CLOUD_KEY",
+            "NETWORK_APPLICATION"
+        ],
+        "bleServices": [
+            {
+                "default": "78c68045-eba1-40f3-bf5e-52bc7f9ed797",
+                "configured": "45caadb4-6de8-4466-9680-313f1a692594"
+            },
+            {
+                "default": "c6c75474-090d-4ed0-813e-c77d3dae9e33",
+                "configured": "f6ac3f8a-6c0b-4403-a1bc-8bf4b5d13dd8",
+                "features": {
+                    "ucore": true
+                }
+            }
+        ],
+        "adoptability": "standalone"
+    },
+    "UCKP": {
+        "name": "UCK G2 Plus",
+        "names": {
+            "abbreviation": "UCK G2 Plus",
+            "fullName": "Cloud Key Gen2 Plus",
+            "sku": "UCK-G2-Plus"
+        },
+        "type": "uck",
+        "compliance": {
+            "fcc": "SWX-UCKG2P",
+            "ic": "6545A-UCKG2P",
+            "displayName": "UniFi® Cloud Key Gen2 Plus"
+        },
+        "deviceCapabilities": [
+            "CLOUD_KEY",
+            "NETWORK_APPLICATION"
+        ],
+        "bleServices": [
+            {
+                "default": "59352787-2e1d-4dcd-874d-d351b6a8938d",
+                "configured": "9287211b-af83-4542-97fb-f9a845475309"
+            },
+            {
+                "default": "d5f28bcd-c761-4ae0-a8f2-dfaa7e8bf1c5",
+                "configured": "e756dc71-b12c-442c-9c43-efa65ec5fdd8",
+                "features": {
+                    "ucore": true
+                }
+            }
+        ],
+        "adoptability": "standalone"
+    },
+    "UCMSH": {
+        "name": "UAP XG Mesh",
+        "names": {
+            "abbreviation": "UAP XG Mesh",
+            "fullName": "Access Point Mesh XG",
+            "sku": "UAP-XG-Mesh"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 10
+            },
+            "ng": {
+                "maxPower": 25,
+                "gain": 15
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UCXG": {
+        "name": "UAP XG",
+        "names": {
+            "abbreviation": "UAP XG",
+            "fullName": "Access Point XG",
+            "sku": "UAP-XG"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPXG",
+            "ic": "6545A-UAPXG",
+            "displayName": "UniFi® XG AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 8
+            },
+            "ng": {
+                "maxPower": 25,
+                "gain": 6
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UDC48X6": {
+        "name": "USW Leaf",
+        "names": {
+            "abbreviation": "USW Leaf",
+            "fullName": "Switch Leaf",
+            "sku": "USW-Leaf"
+        },
+        "type": "usw",
+        "deviceCapabilities": [
+            "SWITCH",
+            "SWITCH_LEAF"
+        ],
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_LLDP_MED",
+            "SWITCH_CAP_EGRESS_RATE_LIMIT"
+        ],
+        "ports": {
+            "sfp28": "1-48",
+            "qsfp28": "49-54"
+        },
+        "diagram": [
+            "01 03 05 07 09 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53",
+            "02 04 06 08 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54"
+        ],
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "f04efea7-faf0-4637-afd5-bee983444005",
+                "configured": "f5f0fc99-0867-427c-a231-6a028a104efd"
+            }
+        ]
+    },
+    "UDM": {
+        "name": "UDM",
+        "names": {
+            "abbreviation": "UDM",
+            "fullName": "Dream Machine",
+            "sku": "UDM"
+        },
+        "type": "udm",
+        "compliance": {
+            "fcc": "SWX-UDM",
+            "ic": "6545A-UDM",
+            "displayName": "UniFi® Dream Machine"
+        },
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_PORT_ISOLATION",
+            "SWITCH_CAP_STORM_CONTROL",
+            "SWITCH_CAP_STP",
+            "SWITCH_CAP_LLDP_MED",
+            "SWITCH_CAP_EGRESS_RATE_LIMIT"
+        ],
+        "deviceCapabilities": [
+            "GATEWAY",
+            "SWITCH",
+            "ACCESS_POINT",
+            "NETWORK_APPLICATION"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true
+        },
+        "subtypes": [
+            "ugw",
+            "usw",
+            "uap"
+        ],
+        "diagram": [
+            "01 02 03 04 __ 05"
+        ],
+        "ports": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "WAN"
+        },
+        "networkGroups": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "WAN"
+        },
+        "bleServices": [
+            {
+                "default": "59a52bba-e33b-4739-a82d-7e875c8ded0e",
+                "configured": "d83b80e3-e81f-4f66-879b-779be5f6a693"
+            }
+        ],
+        "details": {
+            "ipsThroughput": "850 Mbps"
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "linkNegotiation": {
+            "eth4": {
+                "portIdx": 5,
+                "supportedValues": [
+                    "autoneg",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            }
+        },
+        "adoptability": "standalone"
+    },
+    "UDMB": {
+        "name": "UAP BeaconHD",
+        "names": {
+            "abbreviation": "UAP BeaconHD",
+            "fullName": "Access Point BeaconHD",
+            "sku": "UAP-BeaconHD"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true,
+            "atfDisabled": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UDMENT": {
+        "name": "EFG",
+        "names": {
+            "abbreviation": "EFG",
+            "fullName": "Enterprise Fortress Gateway",
+            "sku": "UDM-Enterprise"
+        },
+        "type": "udm",
+        "deviceCapabilities": [
+            "GATEWAY",
+            "SWITCH",
+            "NETWORK_APPLICATION",
+            "PROTECT_APPLICATION"
+        ],
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_PORT_ISOLATION",
+            "SWITCH_CAP_STORM_CONTROL",
+            "SWITCH_CAP_STP",
+            "SWITCH_CAP_LLDP_MED",
+            "SWITCH_CAP_EGRESS_RATE_LIMIT"
+        ],
+        "subtypes": [
+            "ugw",
+            "usw"
+        ],
+        "diagram": [
+            "01 03 05",
+            "02 04 06"
+        ],
+        "ports": {
+            "eth0": "WAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "WAN2",
+            "eth5": "LAN",
+            "standard": 2,
+            "plus": [
+                3,
+                4
+            ],
+            "sfp28": [
+                5,
+                6
+            ]
+        },
+        "networkGroups": {
+            "eth0": "WAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "WAN2",
+            "eth5": "LAN"
+        },
+        "linkNegotiation": {
+            "eth0": {
+                "portIdx": 1,
+                "supportedValues": [
+                    "autoneg",
+                    "2500 FDX",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth1": {
+                "portIdx": 2,
+                "supportedValues": [
+                    "autoneg",
+                    "2500 FDX",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth2": {
+                "portIdx": 3,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            },
+            "eth3": {
+                "portIdx": 4,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            },
+            "eth4": {
+                "portIdx": 5,
+                "supportedValues": [
+                    "autoneg",
+                    "25000 FDX",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            },
+            "eth5": {
+                "portIdx": 6,
+                "supportedValues": [
+                    "autoneg",
+                    "25000 FDX",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            }
+        },
+        "bleServices": [
+            {
+                "default": "7538c680-8441-47b4-ab44-2eb926fe11bd",
+                "configured": "158a3b2d-0bab-45c0-97f1-1625955f2031"
+            }
+        ],
+        "details": {
+            "ipsThroughput": "3.5 Gbps"
+        },
+        "adoptability": "standalone"
+    },
+    "UDMPRO": {
+        "name": "UDM Pro",
+        "names": {
+            "abbreviation": "UDM Pro",
+            "fullName": "Dream Machine Pro",
+            "sku": "UDM-Pro"
+        },
+        "type": "udm",
+        "compliance": {
+            "fcc": "SWX-UDMPRO",
+            "ic": "6545A-UDMPRO",
+            "displayName": "UniFi® Dream Machine Pro"
+        },
+        "deviceCapabilities": [
+            "GATEWAY",
+            "SWITCH",
+            "NETWORK_APPLICATION",
+            "PROTECT_APPLICATION"
+        ],
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_PORT_ISOLATION",
+            "SWITCH_CAP_STORM_CONTROL",
+            "SWITCH_CAP_STP",
+            "SWITCH_CAP_LLDP_MED",
+            "SWITCH_CAP_EGRESS_RATE_LIMIT"
+        ],
+        "subtypes": [
+            "ugw",
+            "usw"
+        ],
+        "diagram": [
+            "01 03 05 07 __ __ 10",
+            "02 04 06 08 __ 09 11"
+        ],
+        "ports": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "LAN",
+            "eth5": "LAN",
+            "eth6": "LAN",
+            "eth7": "LAN",
+            "eth8": "WAN",
+            "eth9": "WAN2",
+            "eth10": "LAN",
+            "standard": 9,
+            "plus": [
+                10,
+                11
+            ]
+        },
+        "networkGroups": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "LAN",
+            "eth5": "LAN",
+            "eth6": "LAN",
+            "eth7": "LAN",
+            "eth8": "WAN",
+            "eth9": "WAN2",
+            "eth10": "LAN"
+        },
+        "linkNegotiation": {
+            "eth7": {
+                "portIdx": 8,
+                "supportedValues": [
+                    "autoneg",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth8": {
+                "portIdx": 9,
+                "supportedValues": [
+                    "autoneg",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth9": {
+                "portIdx": 10,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            },
+            "eth10": {
+                "portIdx": 11,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            }
+        },
+        "bleServices": [
+            {
+                "default": "afcad778-a44c-48d2-9b50-dbbaeff1e77a",
+                "configured": "26816cf6-334b-4580-bc3f-f1b72ef5d93e"
+            }
+        ],
+        "details": {
+            "ipsThroughput": "3.5 Gbps"
+        },
+        "adoptability": "standalone"
+    },
+    "UDMPROSE": {
+        "name": "UDM SE",
+        "names": {
+            "abbreviation": "UDM SE",
+            "fullName": "Dream Machine Special Edition",
+            "sku": "UDM-SE"
+        },
+        "type": "udm",
+        "compliance": {
+            "fcc": "SWX-UDMPROSE",
+            "ic": "6545A-UDMPROSE",
+            "displayName": "UniFi® Dream Machine Pro SE"
+        },
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_PORT_ISOLATION",
+            "SWITCH_CAP_STORM_CONTROL",
+            "SWITCH_CAP_STP",
+            "SWITCH_CAP_LLDP_MED",
+            "SWITCH_CAP_EGRESS_RATE_LIMIT"
+        ],
+        "deviceCapabilities": [
+            "GATEWAY",
+            "SWITCH",
+            "NETWORK_APPLICATION",
+            "PROTECT_APPLICATION"
+        ],
+        "features": {
+            "poe": true
+        },
+        "subtypes": [
+            "ugw",
+            "usw"
+        ],
+        "diagram": [
+            "01 03 05 07 __ __ 10",
+            "02 04 06 08 __ 09 11"
+        ],
+        "ports": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "LAN",
+            "eth5": "LAN",
+            "eth6": "LAN",
+            "eth7": "LAN",
+            "eth8": "WAN",
+            "eth9": "WAN2",
+            "eth10": "LAN",
+            "standard": 9,
+            "plus": [
+                10,
+                11
+            ]
+        },
+        "networkGroups": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "LAN",
+            "eth5": "LAN",
+            "eth6": "LAN",
+            "eth7": "LAN",
+            "eth8": "WAN",
+            "eth9": "WAN2",
+            "eth10": "LAN"
+        },
+        "linkNegotiation": {
+            "eth7": {
+                "portIdx": 8,
+                "supportedValues": [
+                    "autoneg",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth8": {
+                "portIdx": 9,
+                "supportedValues": [
+                    "autoneg",
+                    "2500 FDX",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth9": {
+                "portIdx": 10,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            },
+            "eth10": {
+                "portIdx": 11,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            }
+        },
+        "bleServices": [
+            {
+                "default": "5b3d311d-d2b0-4091-af46-6de7a90bacf8",
+                "configured": "0fd8c390-a0e8-4cb2-b93a-7b3051c83c46"
+            }
+        ],
+        "details": {
+            "ipsThroughput": "3.5 Gbps"
+        },
+        "power": {
+            "capacity": 190
+        },
+        "adoptability": "standalone"
+    },
+    "UDR": {
+        "name": "UDR",
+        "names": {
+            "abbreviation": "UDR",
+            "fullName": "Dream Router",
+            "sku": "UDR"
+        },
+        "type": "udm",
+        "compliance": {
+            "fcc": "SWX-UDR",
+            "ic": "6545A-UDR",
+            "displayName": "UniFi® Dream Router"
+        },
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_PORT_ISOLATION",
+            "SWITCH_CAP_STORM_CONTROL",
+            "SWITCH_CAP_STP",
+            "SWITCH_CAP_LLDP_MED",
+            "SWITCH_CAP_EGRESS_RATE_LIMIT"
+        ],
+        "deviceCapabilities": [
+            "GATEWAY",
+            "SWITCH",
+            "ACCESS_POINT",
+            "NETWORK_APPLICATION",
+            "PROTECT_APPLICATION"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "ax": true,
+            "bandsteer": true,
+            "poe": true
+        },
+        "subtypes": [
+            "ugw",
+            "usw",
+            "uap"
+        ],
+        "diagram": [
+            "01 02 03 04 __ 05"
+        ],
+        "ports": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "WAN"
+        },
+        "networkGroups": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "WAN"
+        },
+        "linkNegotiation": {
+            "eth4": {
+                "portIdx": 5,
+                "supportedValues": [
+                    "autoneg",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            }
+        },
+        "radios": {
+            "na": {
+                "maxPower": 26,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 26,
+                "gain": 3
+            }
+        },
+        "power": {
+            "capacity": 40
+        },
+        "adoptability": "standalone",
+        "bleServices": [
+            {
+                "default": "ff3d0b52-98ac-4590-b991-c9f90324df9c",
+                "configured": "fe33e6b5-25c7-4bba-a6d2-41761765a961"
+            }
+        ]
+    },
+    "UDRULT": {
+        "name": "UCG Ultra",
+        "names": {
+            "abbreviation": "UCG Ultra",
+            "fullName": "Cloud Gateway Ultra",
+            "sku": "UDRULT"
+        },
+        "type": "udm",
+        "compliance": {
+            "fcc": "SWX-UDRULT",
+            "ic": "6545A-UDRULTRA",
+            "displayName": "UniFi® Cloud Gateway Ultra"
+        },
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_PORT_ISOLATION",
+            "SWITCH_CAP_STORM_CONTROL",
+            "SWITCH_CAP_STP",
+            "SWITCH_CAP_LLDP_MED",
+            "SWITCH_CAP_EGRESS_RATE_LIMIT"
+        ],
+        "deviceCapabilities": [
+            "GATEWAY",
+            "SWITCH",
+            "NETWORK_APPLICATION",
+            "PROTECT_APPLICATION",
+            "CONTROLLER",
+            "APPLICATION_MODE"
+        ],
+        "hasOptionalWan": true,
+        "features": {
+            "poe": true
+        },
+        "subtypes": [
+            "ugw",
+            "usw"
+        ],
+        "diagram": [
+            "01 02 03 04 __ 05"
+        ],
+        "ports": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "WAN"
+        },
+        "networkGroups": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "WAN"
+        },
+        "linkNegotiation": {
+            "eth3": {
+                "portIdx": 4,
+                "supportedValues": [
+                    "autoneg",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth4": {
+                "portIdx": 5,
+                "supportedValues": [
+                    "autoneg",
+                    "2500 FDX",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            }
+        },
+        "power": {
+            "capacity": 40
+        },
+        "adoptability": "standalone",
+        "bleServices": [
+            {
+                "default": "7f099d32-5268-471d-beba-00a7c1f4bf6e",
+                "configured": "0e17a4b9-e658-4b70-809b-0554eb17794c"
+            }
+        ]
+    },
+    "UDW": {
+        "name": "UDW",
+        "names": {
+            "abbreviation": "UDW",
+            "fullName": "Dream Wall",
+            "sku": "UDW"
+        },
+        "type": "udm",
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_PORT_ISOLATION",
+            "SWITCH_CAP_STORM_CONTROL",
+            "SWITCH_CAP_STP",
+            "SWITCH_CAP_LLDP_MED",
+            "SWITCH_CAP_EGRESS_RATE_LIMIT"
+        ],
+        "deviceCapabilities": [
+            "GATEWAY",
+            "SWITCH",
+            "ACCESS_POINT",
+            "NETWORK_APPLICATION"
+        ],
+        "features": {
+            "poe": true
+        },
+        "subtypes": [
+            "ugw",
+            "usw",
+            "uap"
+        ],
+        "diagram": [
+            "01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17",
+            "__ __ __ __ __ __ __ __ __ __ __ __ __ __ 18 19 20"
+        ],
+        "ports": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "LAN",
+            "eth5": "LAN",
+            "eth6": "LAN",
+            "eth7": "LAN",
+            "eth8": "LAN",
+            "eth9": "LAN",
+            "eth10": "LAN",
+            "eth11": "LAN",
+            "eth12": "LAN",
+            "eth13": "LAN",
+            "eth14": "LAN",
+            "eth15": "LAN",
+            "eth16": "LAN",
+            "eth17": "LAN",
+            "eth18": "WAN",
+            "eth19": "WAN2",
+            "standard": 19,
+            "plus": [
+                17,
+                20
+            ]
+        },
+        "networkGroups": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "LAN",
+            "eth5": "LAN",
+            "eth6": "LAN",
+            "eth7": "LAN",
+            "eth8": "LAN",
+            "eth9": "LAN",
+            "eth10": "LAN",
+            "eth11": "LAN",
+            "eth12": "LAN",
+            "eth13": "LAN",
+            "eth14": "LAN",
+            "eth15": "LAN",
+            "eth16": "LAN",
+            "eth17": "LAN",
+            "eth18": "WAN",
+            "eth19": "WAN2"
+        },
+        "linkNegotiation": {
+            "eth15": {
+                "portIdx": 16,
+                "supportedValues": [
+                    "autoneg",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth16": {
+                "portIdx": 17,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            },
+            "eth18": {
+                "portIdx": 19,
+                "supportedValues": [
+                    "autoneg",
+                    "2500 FDX",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth19": {
+                "portIdx": 20,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            }
+        },
+        "bleServices": [
+            {
+                "default": "1ccfb2de-23cd-4966-802d-2b7237980910",
+                "configured": "27f442d2-e082-4548-917c-46ed072babf5"
+            }
+        ],
+        "details": {
+            "ipsThroughput": "3.5 Gbps"
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "power": {
+            "capacity": 450
+        },
+        "adoptability": "standalone"
+    },
+    "UDWPRO": {
+        "name": "UDWPRO",
+        "names": {
+            "abbreviation": "UDWPRO",
+            "fullName": "Dream Wall Pro",
+            "sku": "UDWPRO"
+        },
+        "type": "udm",
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_PORT_ISOLATION",
+            "SWITCH_CAP_STORM_CONTROL",
+            "SWITCH_CAP_STP",
+            "SWITCH_CAP_LLDP_MED",
+            "SWITCH_CAP_EGRESS_RATE_LIMIT"
+        ],
+        "deviceCapabilities": [
+            "GATEWAY",
+            "SWITCH",
+            "ACCESS_POINT",
+            "NETWORK_APPLICATION",
+            "PROTECT_APPLICATION"
+        ],
+        "subtypes": [
+            "ugw",
+            "usw",
+            "uap"
+        ],
+        "diagram": [
+            "01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20",
+            "__ __ __ __ __ __ __ __ 21 22 23 __ __ __ __ __ __ __ __ __ "
+        ],
+        "ports": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "LAN",
+            "eth5": "LAN",
+            "eth6": "LAN",
+            "eth7": "LAN",
+            "eth8": "LAN",
+            "eth9": "LAN",
+            "eth10": "LAN",
+            "eth11": "LAN",
+            "eth12": "LAN",
+            "eth13": "LAN",
+            "eth14": "LAN",
+            "eth15": "LAN",
+            "eth16": "LAN",
+            "eth17": "LAN",
+            "eth18": "LAN",
+            "eth19": "LAN",
+            "psu0": "Internal",
+            "eth20": "WAN",
+            "eth21": "WAN2",
+            "standard": 22,
+            "plus": [
+                17,
+                18,
+                19,
+                20,
+                23
+            ]
+        },
+        "networkGroups": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "LAN",
+            "eth5": "LAN",
+            "eth6": "LAN",
+            "eth7": "LAN",
+            "eth8": "LAN",
+            "eth9": "LAN",
+            "eth10": "LAN",
+            "eth11": "LAN",
+            "eth12": "LAN",
+            "eth13": "LAN",
+            "eth14": "LAN",
+            "eth15": "LAN",
+            "eth16": "LAN",
+            "eth17": "LAN",
+            "eth18": "LAN",
+            "eth19": "LAN",
+            "psu0": "Internal",
+            "eth20": "WAN",
+            "eth21": "WAN2"
+        },
+        "linkNegotiation": {
+            "eth15": {
+                "portIdx": 16,
+                "supportedValues": [
+                    "autoneg",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth19": {
+                "portIdx": 20,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            },
+            "eth20": {
+                "portIdx": 22,
+                "supportedValues": [
+                    "autoneg",
+                    "2500 FDX",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth21": {
+                "portIdx": 23,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            }
+        },
+        "bleServices": [
+            {
+                "default": "1b7bdbfb-77e4-4215-8739-fd0ccc0e4464",
+                "configured": "9048be32-e07d-4070-abca-94d191857bee"
+            }
+        ],
+        "details": {
+            "ipsThroughput": "3.5 Gbps"
+        },
+        "power": {
+            "capacity": 450
+        },
+        "adoptability": "standalone"
+    },
+    "UFLHD": {
+        "name": "FlexHD",
+        "names": {
+            "abbreviation": "UAP FlexHD",
+            "fullName": "Access Point FlexHD",
+            "sku": "UAP-FlexHD"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPFLEXHD",
+            "ic": "6545A-UAPFLEXHD",
+            "displayName": "UniFi® FlexHD AP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true,
+            "atfDisabled": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UGW3": {
+        "name": "USG 3P",
+        "names": {
+            "abbreviation": "USG 3P",
+            "fullName": "Security Gateway",
+            "sku": "USG-3P"
+        },
+        "type": "ugw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Security Gateway"
+        },
+        "deviceCapabilities": [
+            "GATEWAY"
+        ],
+        "diagram": [
+            "01 02 03"
+        ],
+        "ports": {
+            "eth0": "WAN",
+            "eth1": "LAN",
+            "eth2": "WAN2/LAN2"
+        },
+        "networkGroups": {
+            "eth0": "WAN",
+            "eth1": "LAN",
+            "eth2": "WAN2/LAN2"
+        },
+        "linkNegotiation": {
+            "eth0": {
+                "portIdx": 1,
+                "supportedValues": [
+                    "autoneg",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth1": {
+                "portIdx": 2,
+                "supportedValues": [
+                    "autoneg",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth2": {
+                "portIdx": 3,
+                "supportedValues": [
+                    "autoneg",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            }
+        },
+        "features": {
+            "legacyPortRemap": true
+        },
+        "details": {
+            "ipsThroughput": "85 Mbps",
+            "legacyPortRemap": true
+        },
+        "adoptability": "adoptable"
+    },
+    "UGW4": {
+        "name": "USG Pro 4",
+        "names": {
+            "abbreviation": "USG Pro",
+            "fullName": "Security Gateway Pro",
+            "sku": "USG-Pro-4"
+        },
+        "type": "ugw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Security Gateway Pro 4"
+        },
+        "deviceCapabilities": [
+            "GATEWAY"
+        ],
+        "diagram": [
+            "01 02 03 04"
+        ],
+        "temperatureSensors": [
+            {
+                "sensor": "PHY",
+                "maxTemp": 105
+            },
+            {
+                "sensor": "CPU",
+                "maxTemp": 100
+            },
+            {
+                "sensor": "Board (PHY)"
+            },
+            {
+                "sensor": "Board (CPU)"
+            }
+        ],
+        "ports": {
+            "eth0": "LAN",
+            "eth1": "LAN2",
+            "eth2": "WAN",
+            "eth3": "WAN2"
+        },
+        "networkGroups": {
+            "eth0": "LAN",
+            "eth1": "LAN2",
+            "eth2": "WAN",
+            "eth3": "WAN2"
+        },
+        "linkNegotiation": {
+            "eth0": {
+                "portIdx": 1,
+                "supportedValues": [
+                    "autoneg",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth1": {
+                "portIdx": 2,
+                "supportedValues": [
+                    "autoneg",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth2": {
+                "portIdx": 3,
+                "supportedValues": [
+                    "autoneg",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth3": {
+                "portIdx": 4,
+                "supportedValues": [
+                    "autoneg",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            }
+        },
+        "details": {
+            "ipsThroughput": "250 Mbps"
+        },
+        "adoptability": "adoptable"
+    },
+    "UGWHD4": {
+        "name": "USG",
+        "names": {
+            "abbreviation": "USG",
+            "fullName": "Security Gateway",
+            "sku": "USG"
+        },
+        "type": "ugw",
+        "deviceCapabilities": [
+            "GATEWAY"
+        ],
+        "diagram": [
+            "01 02 03 04"
+        ],
+        "ports": {
+            "eth0": "0",
+            "eth1": "1",
+            "eth2": "2",
+            "eth3": "3"
+        },
+        "adoptability": "adoptable"
+    },
+    "UGWXG": {
+        "name": "USG XG 8",
+        "names": {
+            "abbreviation": "USG XG",
+            "fullName": "Security Gateway XG",
+            "sku": "USG-XG-8"
+        },
+        "type": "ugw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Security Gateway XG"
+        },
+        "deviceCapabilities": [
+            "GATEWAY"
+        ],
+        "ports": {
+            "eth0": "0",
+            "eth1": "1",
+            "eth2": "2",
+            "eth3": "3",
+            "eth4": "4",
+            "eth5": "5",
+            "eth6": "6",
+            "eth7": "7",
+            "eth8": "8"
+        },
+        "networkGroups": {
+            "eth0": "WAN2",
+            "eth1": "LAN",
+            "eth2": "LAN2",
+            "eth3": "LAN3",
+            "eth4": "LAN4",
+            "eth5": "LAN5",
+            "eth6": "LAN6",
+            "eth7": "LAN7",
+            "eth8": "WAN"
+        },
+        "linkNegotiation": {
+            "eth0": {
+                "portIdx": 1,
+                "supportedValues": [
+                    "autoneg",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth1": {
+                "portIdx": 2,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            },
+            "eth2": {
+                "bindWith": "eth1"
+            },
+            "eth3": {
+                "bindWith": "eth1"
+            },
+            "eth4": {
+                "bindWith": "eth1"
+            },
+            "eth5": {
+                "portIdx": 6,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            },
+            "eth6": {
+                "bindWith": "eth5"
+            },
+            "eth7": {
+                "bindWith": "eth5"
+            },
+            "eth8": {
+                "bindWith": "eth5"
+            }
+        },
+        "diagram": [
+            "02 04 06 08 __",
+            "03 05 07 09 01"
+        ],
+        "features": {
+            "sfpPlusSupported": true
+        },
+        "temperatureSensors": [
+            {
+                "sensor": "Board 1"
+            },
+            {
+                "sensor": "Board 2"
+            },
+            {
+                "sensor": "CPU",
+                "maxTemp": 95
+            },
+            {
+                "sensor": "PHY 1",
+                "maxTemp": 100
+            },
+            {
+                "sensor": "PHY 2",
+                "maxTemp": 100
+            }
+        ],
+        "bleServices": [
+            {
+                "default": "60dbfe9e-6b5d-11e8-adc0-fa7ae01bbebc",
+                "configured": "8e760c3c-6b5d-11e8-adc0-fa7ae01bbebc"
+            }
+        ],
+        "details": {
+            "ipsThroughput": "1 Gbps"
+        },
+        "adoptability": "adoptable"
+    },
+    "UHDIW": {
+        "name": "IW HD",
+        "names": {
+            "abbreviation": "UAP IW HD",
+            "fullName": "Access Point In-Wall HD",
+            "sku": "UAP-IW-HD"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPIWHD",
+            "ic": "6545A-UAPIWHD",
+            "displayName": "UniFi® In-Wall HD AP"
+        },
+        "deviceCapabilities": [
+            "SWITCH",
+            "ACCESS_POINT"
+        ],
+        "hybrid": "uap+usw",
+        "ports": {
+            "standard": 4
+        },
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true,
+            "atfDisabled": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 20,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "ULTE": {
+        "name": "LTE",
+        "names": {
+            "abbreviation": "U LTE",
+            "fullName": "UniFi LTE",
+            "sku": "U-LTE"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ULTE"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true
+        },
+        "radios": {
+            "ng": {
+                "maxPower": 20,
+                "gain": 2
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "ULTEPEU": {
+        "name": "LTE Pro",
+        "names": {
+            "abbreviation": "U LTE Pro",
+            "fullName": "UniFi LTE Pro",
+            "sku": "U-LTE-Pro"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ULTE"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true
+        },
+        "radios": {
+            "ng": {
+                "maxPower": 20,
+                "gain": 2
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "ULTEPUS": {
+        "name": "LTE Pro",
+        "names": {
+            "abbreviation": "U LTE Pro",
+            "fullName": "UniFi LTE Pro",
+            "sku": "U-LTE-Pro"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "ULTE"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true
+        },
+        "radios": {
+            "ng": {
+                "maxPower": 20,
+                "gain": 2
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UNASPRO": {
+        "name": "Network Attached Storage Pro",
+        "names": {
+            "abbreviation": "UNAS Pro",
+            "fullName": "Network Attached Storage Pro",
+            "sku": "UNAS Pro"
+        },
+        "type": "unas",
+        "bleServices": [
+            {
+                "default": "ec4c399c-49c9-4192-a4fd-b32f1622443e",
+                "configured": "edb1f0b7-bdcc-4b06-a326-17ff99997c5b",
+                "features": {
+                    "ucore": true
+                }
+            }
+        ],
+        "deviceCapabilities": [
+            "STORAGE"
+        ],
+        "adoptability": "standalone"
+    },
+    "UNASSTU": {
+        "name": "Network Attached Storage Studio SSD",
+        "names": {
+            "abbreviation": "UNAS Studio SSD",
+            "fullName": "Network Attached Storage Studio SSD",
+            "sku": "UNAS Stu"
+        },
+        "type": "unas",
+        "bleServices": [
+            {
+                "default": "813531d3-954d-4c7c-90c1-018ea4faffdb",
+                "configured": "38bb2b74-0245-4815-a1e0-d05c39f37c65",
+                "features": {
+                    "ucore": true
+                }
+            }
+        ],
+        "deviceCapabilities": [
+            "STORAGE"
+        ],
+        "adoptability": "standalone"
+    },
+    "UNASSTU-BK": {
+        "name": "Network Attached Storage Studio SSD",
+        "names": {
+            "abbreviation": "UNAS Studio SSD",
+            "fullName": "Network Attached Storage Studio SSD",
+            "sku": "UNAS Stu"
+        },
+        "type": "unas",
+        "bleServices": [
+            {
+                "default": "1cbf8947-db12-470c-b1d0-e02aacd2ad3a",
+                "configured": "8f500a6a-00a2-4630-8cc4-654c73b6bfe8",
+                "features": {
+                    "ucore": true
+                }
+            }
+        ],
+        "deviceCapabilities": [
+            "STORAGE"
+        ],
+        "adoptability": "standalone"
+    },
+    "UNVR": {
+        "name": "Video Recorder",
+        "names": {
+            "abbreviation": "UNVR",
+            "fullName": "Video Recorder",
+            "sku": "UNVR"
+        },
+        "type": "unvr",
+        "bleServices": [
+            {
+                "default": "049df97a-5894-408c-bc87-b4872b2a6346",
+                "configured": "9fb9ae81-e7fb-49b2-b7f8-dfef4e09e3f4",
+                "features": {
+                    "ucore": true
+                }
+            }
+        ],
+        "deviceCapabilities": [
+            "PROTECT_APPLICATION",
+            "STORAGE"
+        ],
+        "adoptability": "standalone"
+    },
+    "UNVR-Pro": {
+        "name": "Video Recorder Pro",
+        "names": {
+            "abbreviation": "UNVR Pro",
+            "fullName": "Video Recorder Pro",
+            "sku": "UNVR-PRO"
+        },
+        "type": "unvr",
+        "bleServices": [
+            {
+                "default": "575ef462-1589-42ec-941a-3002313393f2",
+                "configured": "10b3fc63-28eb-4f7e-b8de-7579cd609cf5",
+                "features": {
+                    "ucore": true
+                }
+            }
+        ],
+        "deviceCapabilities": [
+            "PROTECT_APPLICATION",
+            "STORAGE"
+        ],
+        "adoptability": "standalone"
+    },
+    "UNVR4": {
+        "name": "Video Recorder",
+        "names": {
+            "abbreviation": "UNVR",
+            "fullName": "Video Recorder",
+            "sku": "UNVR"
+        },
+        "type": "unvr",
+        "bleServices": [
+            {
+                "default": "049df97a-5894-408c-bc87-b4872b2a6346",
+                "configured": "9fb9ae81-e7fb-49b2-b7f8-dfef4e09e3f4",
+                "features": {
+                    "ucore": true
+                }
+            }
+        ],
+        "deviceCapabilities": [
+            "PROTECT_APPLICATION",
+            "STORAGE"
+        ],
+        "adoptability": "standalone"
+    },
+    "UNVRPRO": {
+        "name": "Video Recorder Pro",
+        "names": {
+            "abbreviation": "UNVR Pro",
+            "fullName": "Video Recorder Pro",
+            "sku": "UNVR-PRO"
+        },
+        "type": "unvr",
+        "bleServices": [
+            {
+                "default": "575ef462-1589-42ec-941a-3002313393f2",
+                "configured": "10b3fc63-28eb-4f7e-b8de-7579cd609cf5",
+                "features": {
+                    "ucore": true
+                }
+            }
+        ],
+        "deviceCapabilities": [
+            "PROTECT_APPLICATION",
+            "STORAGE"
+        ],
+        "adoptability": "standalone"
+    },
+    "UP1": {
+        "name": "USP Plug",
+        "names": {
+            "abbreviation": "USP Plug",
+            "fullName": "SmartPower Plug",
+            "sku": "USP-Plug"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "SMART_POWER"
+        ],
+        "primaryOutletGroupCount": 1,
+        "outletsDiagram": [
+            "01"
+        ],
+        "adoptability": "adoptable"
+    },
+    "UP4": {
+        "name": "UVP X",
+        "names": {
+            "abbreviation": "UVP",
+            "fullName": "Phone",
+            "sku": "UVP-X"
+        },
+        "type": "uph",
+        "deviceCapabilities": [
+            "PHONE"
+        ],
+        "adoptability": "adoptable"
+    },
+    "UP5": {
+        "name": "UVP",
+        "names": {
+            "abbreviation": "UVP",
+            "fullName": "Phone",
+            "sku": "UVP"
+        },
+        "type": "uph",
+        "deviceCapabilities": [
+            "PHONE"
+        ],
+        "adoptability": "adoptable"
+    },
+    "UP5c": {
+        "name": "UVP",
+        "names": {
+            "abbreviation": "UVP",
+            "fullName": "Phone",
+            "sku": "UVP"
+        },
+        "type": "uph",
+        "deviceCapabilities": [
+            "PHONE"
+        ],
+        "adoptability": "adoptable"
+    },
+    "UP5t": {
+        "name": "UVP Pro",
+        "names": {
+            "abbreviation": "UVP Pro",
+            "fullName": "Phone Professional",
+            "sku": "UVP-Pro"
+        },
+        "type": "uph",
+        "compliance": {
+            "fcc": "SWX-UVPPRO",
+            "ic": "6545A-UVPPRO",
+            "displayName": "UniFi® VoIP Phone Professional"
+        },
+        "deviceCapabilities": [
+            "PHONE"
+        ],
+        "adoptability": "adoptable"
+    },
+    "UP5tc": {
+        "name": "UVP Pro",
+        "names": {
+            "abbreviation": "UVP Pro",
+            "fullName": "Phone Professional",
+            "sku": "UVP-Pro"
+        },
+        "type": "uph",
+        "compliance": {
+            "fcc": "SWX-UVPPRO",
+            "ic": "6545A-UVPPRO",
+            "displayName": "UniFi® VoIP Phone Professional"
+        },
+        "deviceCapabilities": [
+            "PHONE"
+        ],
+        "adoptability": "adoptable"
+    },
+    "UP6": {
+        "name": "USP Strip",
+        "names": {
+            "abbreviation": "USP Strip",
+            "fullName": "SmartPower Strip (6 ports)",
+            "sku": "USP-Strip"
+        },
+        "type": "uap",
+        "deviceCapabilities": [
+            "SMART_POWER"
+        ],
+        "primaryOutletGroupCount": 7,
+        "outlets": {
+            "standard": 6,
+            "usb": [
+                7
+            ]
+        },
+        "outletsDiagram": [
+            "01 03 05 07 07",
+            "02 04 06 07 07"
+        ],
+        "adoptability": "adoptable"
+    },
+    "UP7": {
+        "name": "UVP Executive",
+        "names": {
+            "abbreviation": "UVP Executive",
+            "fullName": "Phone Executive",
+            "sku": "UVP-Executive"
+        },
+        "type": "uph",
+        "compliance": {
+            "fcc": "SWX-UVPEXT",
+            "ic": "6545A-UVPEXT",
+            "displayName": "UniFi® VoIP Phone Executive"
+        },
+        "deviceCapabilities": [
+            "PHONE"
+        ],
+        "adoptability": "adoptable"
+    },
+    "UP7c": {
+        "name": "UVP Executive",
+        "names": {
+            "abbreviation": "UVP Executive",
+            "fullName": "Phone Executive",
+            "sku": "UVP-Executive"
+        },
+        "type": "uph",
+        "compliance": {
+            "fcc": "SWX-UVPEXT",
+            "ic": "6545A-UVPEXT",
+            "displayName": "UniFi® VoIP Phone Executive"
+        },
+        "deviceCapabilities": [
+            "PHONE"
+        ],
+        "adoptability": "adoptable"
+    },
+    "UPB": {
+        "name": "USP Battery",
+        "type": "upb",
+        "deviceCapabilities": [],
+        "adoptability": "adoptable"
+    },
+    "US16P150": {
+        "name": "US 16 150W",
+        "names": {
+            "abbreviation": "US 16 PoE 150W",
+            "fullName": "Switch 16 PoE (150 W)",
+            "sku": "US-16-150W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 16 150W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true,
+            "fan": "simple"
+        },
+        "ports": {
+            "standard": 16,
+            "sfp": [
+                17,
+                18
+            ]
+        },
+        "power": {
+            "capacity": 150
+        },
+        "adoptability": "adoptable"
+    },
+    "US24": {
+        "name": "USW 24 G1",
+        "names": {
+            "abbreviation": "USW 24",
+            "fullName": "Switch 24",
+            "sku": "USW-24-G1"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 24"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "fan": "simple"
+        },
+        "ports": {
+            "standard": 24,
+            "sfp": [
+                25,
+                26
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "US24P250": {
+        "name": "US 24 250W",
+        "names": {
+            "abbreviation": "US 24 PoE 250W",
+            "fullName": "Switch 24 PoE (250 W)",
+            "sku": "US-24-250W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 24 250W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true,
+            "fan": "alwayson"
+        },
+        "ports": {
+            "standard": 24,
+            "sfp": [
+                25,
+                26
+            ]
+        },
+        "power": {
+            "capacity": 250
+        },
+        "adoptability": "adoptable"
+    },
+    "US24P500": {
+        "name": "US 24 500W",
+        "names": {
+            "abbreviation": "US 24 PoE 500W",
+            "fullName": "Switch 24 PoE (500 W)",
+            "sku": "US-24-500W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 24 500W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true,
+            "fan": "alwayson"
+        },
+        "ports": {
+            "standard": 24,
+            "sfp": [
+                25,
+                26
+            ]
+        },
+        "power": {
+            "capacity": 500
+        },
+        "adoptability": "adoptable"
+    },
+    "US24PL2": {
+        "name": "US L2 24 PoE",
+        "names": {
+            "abbreviation": "US 24 PoE",
+            "fullName": "Switch 24 PoE",
+            "sku": "US-L2-24-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 24 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true,
+            "fan": "alwayson"
+        },
+        "ports": {
+            "standard": 24,
+            "sfp": [
+                25,
+                26
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "US24PRO": {
+        "name": "USW Pro 24 PoE",
+        "names": {
+            "abbreviation": "USW Pro 24 PoE",
+            "fullName": "Switch Pro 24 PoE",
+            "sku": "USW-Pro-24-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Pro 24 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 24,
+            "plus": [
+                25,
+                26
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "US24PRO2": {
+        "name": "USW Pro 24",
+        "names": {
+            "abbreviation": "USW Pro 24",
+            "fullName": "Switch Pro 24",
+            "sku": "USW-Pro-24"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Pro 24"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "ports": {
+            "standard": 24,
+            "plus": [
+                25,
+                26
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "US48": {
+        "name": "US 48 G1",
+        "names": {
+            "abbreviation": "USW 48",
+            "fullName": "Switch 48",
+            "sku": "US-48-G1"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 48"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "fan": "simple"
+        },
+        "ports": {
+            "standard": 48,
+            "sfp": [
+                51,
+                52
+            ],
+            "plus": [
+                49,
+                50
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "US48P500": {
+        "name": "US 48 500W",
+        "names": {
+            "abbreviation": "US 48 PoE 500W",
+            "fullName": "Switch 48 PoE (500 W)",
+            "sku": "US-48-500W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 48 500W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true,
+            "fan": "alwayson"
+        },
+        "ports": {
+            "standard": 48,
+            "sfp": [
+                51,
+                52
+            ],
+            "plus": [
+                49,
+                50
+            ]
+        },
+        "power": {
+            "capacity": 500
+        },
+        "adoptability": "adoptable"
+    },
+    "US48P750": {
+        "name": "US 48 750W",
+        "names": {
+            "abbreviation": "US 48 PoE 750W",
+            "fullName": "Switch 48 PoE (750 W)",
+            "sku": "US-48-750W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 48 750W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true,
+            "fan": "alwayson"
+        },
+        "ports": {
+            "standard": 48,
+            "sfp": [
+                51,
+                52
+            ],
+            "plus": [
+                49,
+                50
+            ]
+        },
+        "power": {
+            "capacity": 750
+        },
+        "adoptability": "adoptable"
+    },
+    "US48PL2": {
+        "name": "US L2 48 PoE",
+        "names": {
+            "abbreviation": "US 48 PoE",
+            "fullName": "Switch 48 PoE",
+            "sku": "US-L2-48-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 48 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true,
+            "fan": "alwayson"
+        },
+        "ports": {
+            "standard": 48,
+            "sfp": [
+                51,
+                52
+            ],
+            "plus": [
+                49,
+                50
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "US48PRO": {
+        "name": "USW Pro 48 PoE",
+        "names": {
+            "abbreviation": "USW Pro 48 PoE",
+            "fullName": "Switch Pro 48 PoE",
+            "sku": "USW-Pro-48-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Pro 48 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 48,
+            "plus": "49-52"
+        },
+        "adoptability": "adoptable"
+    },
+    "US48PRO2": {
+        "name": "USW Pro 48",
+        "names": {
+            "abbreviation": "USW Pro 48",
+            "fullName": "Switch Pro 48",
+            "sku": "USW-Pro-48"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Pro 48"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "ports": {
+            "standard": 48,
+            "plus": "49-52"
+        },
+        "adoptability": "adoptable"
+    },
+    "US624P": {
+        "name": "USW Enterprise 24 PoE",
+        "names": {
+            "abbreviation": "USW Enterprise 24 PoE",
+            "fullName": "Switch Enterprise 24 PoE",
+            "sku": "USW-Enterprise-24-PoE"
+        },
+        "type": "usw",
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "diagram": [
+            "01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 __ 25 26"
+        ],
+        "ports": {
+            "standard": 24,
+            "plus": [
+                25,
+                26
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "US648P": {
+        "name": "USW Enterprise 48 PoE",
+        "names": {
+            "abbreviation": "USW Enterprise 48 PoE",
+            "fullName": "Switch Enterprise 48 PoE",
+            "sku": "USW-Enterprise-48-PoE"
+        },
+        "type": "usw",
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": "1-48",
+            "plus": "49-54"
+        },
+        "diagram": [
+            "01 03 05 07 09 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 __ 49 51",
+            "02 04 06 08 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 __ 50 52"
+        ],
+        "adoptability": "adoptable"
+    },
+    "US68P": {
+        "name": "USW Enterprise 8 PoE",
+        "names": {
+            "abbreviation": "USW Enterprise 8 PoE",
+            "fullName": "Switch Enterprise 8 PoE",
+            "sku": "USW-Enterprise-8-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "Switch Enterprise 8 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 8,
+            "sfp": [
+                9,
+                10
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "US6XG150": {
+        "name": "US XG 6PoE",
+        "names": {
+            "abbreviation": "US XG 6PoE",
+            "fullName": "Switch 6 XG PoE",
+            "sku": "US-XG-6PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® XG 6 PoE Switch"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": "1-4",
+            "plus": "5-6"
+        },
+        "diagram": [
+            "01 02 03 04 __ 05 06"
+        ],
+        "adoptability": "adoptable"
+    },
+    "US8": {
+        "name": "US 8",
+        "names": {
+            "abbreviation": "US 8",
+            "fullName": "Switch 8",
+            "sku": "US-8"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 8"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 8
+        },
+        "power": {
+            "capacity": 10
+        },
+        "adoptability": "adoptable"
+    },
+    "US8P150": {
+        "name": "US 8 150W",
+        "names": {
+            "abbreviation": "US 8 PoE 150W",
+            "fullName": "Switch 8 PoE (150 W)",
+            "sku": "US-8-150W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 8 150W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 8,
+            "sfp": [
+                9,
+                10
+            ]
+        },
+        "diagram": [
+            "-- -- -- -- -- -- -- -- -- 09",
+            "01 02 03 04 05 06 07 08 -- 10"
+        ],
+        "power": {
+            "capacity": 150
+        },
+        "adoptability": "adoptable"
+    },
+    "US8P60": {
+        "name": "US 8 60W",
+        "names": {
+            "abbreviation": "US 8 60W",
+            "fullName": "Switch 8 (60 W)",
+            "sku": "US-8-60W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 8 60W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 8
+        },
+        "power": {
+            "capacity": 60
+        },
+        "adoptability": "adoptable"
+    },
+    "USAGGPRO": {
+        "name": "USW Pro Aggregation",
+        "names": {
+            "abbreviation": "USW Aggregation Pro",
+            "fullName": "Switch Aggregation Pro",
+            "sku": "USW-Pro-Aggregation"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Aggregation PRO"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "ports": {
+            "plus": "1-28",
+            "sfp28": "29-32"
+        },
+        "primaryPortGroupCount": 32,
+        "diagram": [
+            "01 03 05 07 09 11 13 15 17 19 21 23 25 27 __ 29 31",
+            "02 04 06 08 10 12 14 16 18 20 22 24 26 28 __ 30 32"
+        ],
+        "adoptability": "adoptable"
+    },
+    "USC8": {
+        "name": "US 8",
+        "names": {
+            "abbreviation": "US 8",
+            "fullName": "Switch 8",
+            "sku": "US-8"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 8"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 8
+        },
+        "power": {
+            "capacity": 10
+        },
+        "adoptability": "adoptable"
+    },
+    "USC8P150": {
+        "name": "US 8 150W",
+        "names": {
+            "abbreviation": "US 8 PoE 150W",
+            "fullName": "Switch 8 PoE (150 W)",
+            "sku": "US-8-150W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 8 150W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 8,
+            "sfp": [
+                9,
+                10
+            ]
+        },
+        "power": {
+            "capacity": 150
+        },
+        "adoptability": "adoptable"
+    },
+    "USC8P450": {
+        "name": "USW Industrial",
+        "names": {
+            "abbreviation": "USW Industrial",
+            "fullName": "Switch Industrial",
+            "sku": "USW-Industrial"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Industrial Switch"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 10
+        },
+        "diagram": [
+            "__ __ __ __ __ __ __ __ __ 09",
+            "01 02 03 04 05 06 07 08 __ 10"
+        ],
+        "power": {
+            "capacity": 450
+        },
+        "adoptability": "adoptable"
+    },
+    "USC8P60": {
+        "name": "US 8 60W",
+        "names": {
+            "abbreviation": "US 8 60W",
+            "fullName": "Switch 8 (60 W)",
+            "sku": "US-8-60W"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 8 60W"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 8
+        },
+        "power": {
+            "capacity": 60
+        },
+        "adoptability": "adoptable"
+    },
+    "USF5P": {
+        "name": "USW Flex",
+        "names": {
+            "abbreviation": "USW Flex",
+            "fullName": "Switch Flex",
+            "sku": "USW-Flex"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Flex"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 5
+        },
+        "power": {
+            "capacity": 60
+        },
+        "adoptability": "adoptable"
+    },
+    "USFXG": {
+        "name": "USW Flex XG",
+        "names": {
+            "abbreviation": "USW Flex XG",
+            "fullName": "Switch Flex XG",
+            "sku": "USW-Flex-XG"
+        },
+        "type": "usw",
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "diagram": [
+            "01 __ 02 03 04 05"
+        ],
+        "ports": {
+            "standard": 5
+        },
+        "adoptability": "adoptable"
+    },
+    "USL16LP": {
+        "name": "USW Lite 16 PoE",
+        "names": {
+            "abbreviation": "USW Lite 16 PoE",
+            "fullName": "Switch Lite 16 PoE",
+            "sku": "USW-Lite-16-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Lite 16 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 16
+        },
+        "adoptability": "adoptable"
+    },
+    "USL16LPB": {
+        "name": "USW Lite 16 PoE",
+        "names": {
+            "abbreviation": "USW Lite 16 PoE",
+            "fullName": "Switch Lite 16 PoE",
+            "sku": "USW-Lite-16-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Lite 16 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 16
+        },
+        "adoptability": "adoptable"
+    },
+    "USL16P": {
+        "name": "USW 16 PoE",
+        "names": {
+            "abbreviation": "USW 16 PoE",
+            "fullName": "Switch 16 PoE",
+            "sku": "USW-16-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 16 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 16,
+            "sfp": [
+                17,
+                18
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USL16PB": {
+        "name": "USW 16 PoE",
+        "names": {
+            "abbreviation": "USW 16 PoE",
+            "fullName": "Switch 16 PoE",
+            "sku": "USW-16-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 16 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 16,
+            "sfp": [
+                17,
+                18
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USL24": {
+        "name": "USW 24 G2",
+        "names": {
+            "abbreviation": "USW 24",
+            "fullName": "Switch 24",
+            "sku": "USW-24-G2"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 24"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "ports": {
+            "standard": 24,
+            "sfp": [
+                25,
+                26
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USL24B": {
+        "name": "USW 24 G2",
+        "names": {
+            "abbreviation": "USW 24",
+            "fullName": "Switch 24",
+            "sku": "USW-24-G2"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 24"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "ports": {
+            "standard": 24,
+            "sfp": [
+                25,
+                26
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USL24P": {
+        "name": "USW 24 PoE",
+        "names": {
+            "abbreviation": "USW 24 PoE",
+            "fullName": "Switch 24 PoE",
+            "sku": "USW-24-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 24 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 24,
+            "sfp": [
+                25,
+                26
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USL24PB": {
+        "name": "USW 24 PoE",
+        "names": {
+            "abbreviation": "USW 24 PoE",
+            "fullName": "Switch 24 PoE",
+            "sku": "USW-24-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 24 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 24,
+            "sfp": [
+                25,
+                26
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USL48": {
+        "name": "USW 48 G2",
+        "names": {
+            "abbreviation": "USW 48",
+            "fullName": "Switch 48",
+            "sku": "USW-48-G2"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 48"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "ports": {
+            "standard": 48,
+            "sfp": [
+                49,
+                50,
+                51,
+                52
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USL48B": {
+        "name": "USW 48 G2",
+        "names": {
+            "abbreviation": "USW 48",
+            "fullName": "Switch 48",
+            "sku": "USW-48-G2"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 48"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "ports": {
+            "standard": 48,
+            "sfp": [
+                49,
+                50,
+                51,
+                52
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USL48P": {
+        "name": "USW 48 PoE",
+        "names": {
+            "abbreviation": "USW 48 PoE",
+            "fullName": "Switch 48 PoE",
+            "sku": "USW-48-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 48 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 48,
+            "sfp": [
+                49,
+                50,
+                51,
+                52
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USL48PB": {
+        "name": "USW 48 PoE",
+        "names": {
+            "abbreviation": "USW 48 PoE",
+            "fullName": "Switch 48 PoE",
+            "sku": "USW-48-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 48 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 48,
+            "sfp": [
+                49,
+                50,
+                51,
+                52
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USL8A": {
+        "name": "USW Aggregation",
+        "names": {
+            "abbreviation": "USW Aggregation",
+            "fullName": "Switch Aggregation",
+            "sku": "USW-Aggregation"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Aggregation"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "ports": {
+            "plus": 8
+        },
+        "diagram": [
+            "01 03 05 07",
+            "02 04 06 08"
+        ],
+        "adoptability": "adoptable"
+    },
+    "USL8LP": {
+        "name": "USW Lite 8 PoE",
+        "names": {
+            "abbreviation": "USW Lite 8 PoE",
+            "fullName": "Switch Lite 8 PoE",
+            "sku": "USW-Lite-8-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Lite 8 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 8
+        },
+        "adoptability": "adoptable"
+    },
+    "USL8LPB": {
+        "name": "USW Lite 8 PoE",
+        "names": {
+            "abbreviation": "USW Lite 8 PoE",
+            "fullName": "Switch Lite 8 PoE",
+            "sku": "USW-Lite-8-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Lite 8 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 8
+        },
+        "adoptability": "adoptable"
+    },
+    "USL8MP": {
+        "name": "USW Mission Critical",
+        "names": {
+            "abbreviation": "USW Mission Critical",
+            "fullName": "Switch Mission Critical",
+            "sku": "USW-Mission-Critical"
+        },
+        "type": "usw",
+        "deviceCapabilities": [
+            "SWITCH",
+            "SMART_POWER",
+            "ULTE",
+            "BATTERY_POWER"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 9
+        },
+        "diagram": [
+            "01 02 03 04 05 06 07 08 _ 09"
+        ],
+        "primaryOutletGroupCount": 2,
+        "outletsDiagram": [
+            "01 02"
+        ],
+        "adoptability": "adoptable"
+    },
+    "USLP24P": {
+        "name": "USW XP 24 PoE",
+        "names": {
+            "abbreviation": "USW XP 24 PoE",
+            "fullName": "Switch XP 24 PoE",
+            "sku": "USW-XP-24-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch XP 24 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 24,
+            "plus": [
+                25,
+                26
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USLP48P": {
+        "name": "USW XP 48 PoE",
+        "names": {
+            "abbreviation": "USW XP 48 PoE",
+            "fullName": "Switch XP 48 PoE",
+            "sku": "USW-XP-48-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch XP 48 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 48,
+            "plus": "49-52"
+        },
+        "adoptability": "adoptable"
+    },
+    "USLP8P": {
+        "name": "USW Pro 8 PoE",
+        "names": {
+            "abbreviation": "USW Pro 8 PoE",
+            "fullName": "Switch Pro 8 PoE",
+            "sku": "USW-Pro-8-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Pro 8 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 8,
+            "plus": [
+                9,
+                10
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USM8P": {
+        "name": "USW Ultra",
+        "names": {
+            "abbreviation": "USW Ultra",
+            "fullName": "Switch Ultra",
+            "sku": "USW-Ultra"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Ultra"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 7,
+            "plus": [
+                8
+            ]
+        },
+        "power": {
+            "capacity": 202
+        },
+        "adoptability": "adoptable"
+    },
+    "USM8P210": {
+        "name": "USW Ultra",
+        "names": {
+            "abbreviation": "USW Ultra",
+            "fullName": "Switch Ultra",
+            "sku": "USW-Ultra"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Ultra"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 7,
+            "plus": [
+                8
+            ]
+        },
+        "power": {
+            "capacity": 202
+        },
+        "adoptability": "adoptable"
+    },
+    "USM8P60": {
+        "name": "USW Ultra",
+        "names": {
+            "abbreviation": "USW Ultra",
+            "fullName": "Switch Ultra",
+            "sku": "USW-Ultra"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Ultra"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 7,
+            "plus": [
+                8
+            ]
+        },
+        "power": {
+            "capacity": 52
+        },
+        "adoptability": "adoptable"
+    },
+    "USMINI": {
+        "name": "USW Flex Mini",
+        "names": {
+            "abbreviation": "USW Flex Mini",
+            "fullName": "Switch Flex Mini",
+            "sku": "USW-Flex-Mini"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Flex Mini"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "ports": {
+            "standard": 5
+        },
+        "primaryPortGroupCount": 5,
+        "adoptability": "adoptable"
+    },
+    "USMINI2": {
+        "name": "USW Flex Mini",
+        "names": {
+            "abbreviation": "USW Flex Mini",
+            "fullName": "Switch Flex Mini",
+            "sku": "USW-Flex-Mini"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Flex Mini"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "ports": {
+            "standard": 5
+        },
+        "primaryPortGroupCount": 5,
+        "adoptability": "adoptable"
+    },
+    "USPM24P": {
+        "name": "USW Pro Max 24 PoE",
+        "names": {
+            "abbreviation": "USW Pro Max 24 PoE",
+            "fullName": "Switch Pro Max 24 PoE",
+            "sku": "USW-Pro-Max-24-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Pro Max 24 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 24,
+            "plus": [
+                25,
+                26
+            ]
+        },
+        "diagram": [
+            "01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 __ 25 26"
+        ],
+        "adoptability": "adoptable"
+    },
+    "USPM48P": {
+        "name": "USW Pro Max 48 PoE",
+        "names": {
+            "abbreviation": "USW Pro Max 48 PoE",
+            "fullName": "Switch Pro Max 48 PoE",
+            "sku": "USW-Pro-Max-48-PoE"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch Pro Max 48 PoE"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "features": {
+            "poe": true
+        },
+        "ports": {
+            "standard": 48,
+            "plus": "49-52"
+        },
+        "adoptability": "adoptable"
+    },
+    "USPPDUHD": {
+        "name": "USP PDU HD",
+        "names": {
+            "abbreviation": "USP PDU HD",
+            "fullName": "SmartPower PDU HD",
+            "sku": "USP-PDU-HD"
+        },
+        "type": "usw",
+        "deviceCapabilities": [
+            "SMART_POWER"
+        ],
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_STP",
+            "SWITCH_CAP_LLDP_MED"
+        ],
+        "primaryPortGroupCount": 32,
+        "ports": {
+            "standard": [
+                29
+            ]
+        },
+        "diagram": [
+            "__",
+            "29"
+        ],
+        "primaryOutletGroupCount": 32,
+        "outlets": {
+            "standard": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28
+            ],
+            "usb": [
+                13,
+                14,
+                15,
+                16
+            ],
+            "lan": [
+                29
+            ],
+            "wan": [
+                30,
+                31,
+                32
+            ]
+        },
+        "outletsDiagram": [
+            "01 __ 02 03 04 05 06 07 08 09 10 11 12 __ 29 14 16 30 32 __ 17 18 19 20 21 22 23 24 25 26 27 __ 28",
+            "__ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 13 15 __ 31 __ __ __ __ __ __ __ __ __ __ __ __ __ __"
+        ],
+        "adoptability": "adoptable"
+    },
+    "USPPDUP": {
+        "name": "USP PDU Pro",
+        "names": {
+            "abbreviation": "USP PDU Pro",
+            "fullName": "SmartPower PDU Pro",
+            "sku": "USP-PDU-Pro"
+        },
+        "type": "usw",
+        "deviceCapabilities": [
+            "SMART_POWER"
+        ],
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_STP",
+            "SWITCH_CAP_LLDP_MED"
+        ],
+        "primaryPortGroupCount": 32,
+        "ports": {
+            "standard": 1
+        },
+        "diagram": [
+            "__",
+            "1"
+        ],
+        "primaryOutletGroupCount": 32,
+        "outlets": {
+            "standard": "5-20",
+            "usb": "1-4"
+        },
+        "outletsDiagram": [
+            "01 03 __ 05 06 07 08 09 10 11 12 13 14 15 16",
+            "02 04 __ 17 18 19 20"
+        ],
+        "adoptability": "adoptable"
+    },
+    "USPRPS": {
+        "name": "USP RPS",
+        "names": {
+            "abbreviation": "USP RPS",
+            "fullName": "SmartPower Redundant Power System",
+            "sku": "USP-RPS"
+        },
+        "type": "usw",
+        "deviceCapabilities": [
+            "REDUNDANT_POWER"
+        ],
+        "rps": {
+            "primaryPortGroupCount": 6,
+            "diagram": [
+                "01 03 05",
+                "02 04 06"
+            ]
+        },
+        "adoptability": "adoptable"
+    },
+    "USPRPSP": {
+        "name": "USP RPS PRO",
+        "names": {
+            "abbreviation": "USP RPS Pro",
+            "fullName": "SmartPower Redundant Power System Pro",
+            "sku": "USP-RPS"
+        },
+        "type": "usw",
+        "deviceCapabilities": [
+            "REDUNDANT_POWER",
+            "SMART_POWER"
+        ],
+        "rps": {
+            "primaryPortGroupCount": 8,
+            "diagram": [
+                "01 05",
+                "02 06",
+                "03 07",
+                "04 08"
+            ]
+        },
+        "ports": {
+            "standard": 1
+        },
+        "diagram": [
+            "1"
+        ],
+        "primaryOutletGroupCount": 1,
+        "outlets": {
+            "standard": 1
+        },
+        "outletsDiagram": [
+            "01"
+        ],
+        "features": {
+            "fan": "simple"
+        },
+        "adoptability": "adoptable"
+    },
+    "USXG": {
+        "name": "US 16 XG",
+        "names": {
+            "abbreviation": "US XG 16",
+            "fullName": "Switch XG 16",
+            "sku": "US-16-XG"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch 16 XG"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "ports": {
+            "plus": "1-12",
+            "standard": "13-16"
+        },
+        "diagram": [
+            "01 03 05 07 09 11 __ __ __ __ __",
+            "02 04 06 08 10 12 __ 13 14 15 16"
+        ],
+        "adoptability": "adoptable"
+    },
+    "USXG24": {
+        "name": "USW EnterpriseXG 24",
+        "names": {
+            "abbreviation": "USW Enterprise XG 24",
+            "fullName": "Switch Enterprise XG 24",
+            "sku": "USW-EnterpriseXG-24"
+        },
+        "type": "usw",
+        "compliance": {
+            "fcc": "Compliant",
+            "ic": "Compliant",
+            "displayName": "UniFi® Switch EnterpriseXG 24"
+        },
+        "deviceCapabilities": [
+            "SWITCH"
+        ],
+        "ports": {
+            "standard": "1-24",
+            "plus": "25-26"
+        },
+        "diagram": [
+            "01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 __ 25 26"
+        ],
+        "adoptability": "adoptable"
+    },
+    "UX": {
+        "name": "Express",
+        "names": {
+            "abbreviation": "Express",
+            "fullName": "Express",
+            "sku": "UX"
+        },
+        "type": "udm",
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_PORT_ISOLATION",
+            "SWITCH_CAP_STORM_CONTROL",
+            "SWITCH_CAP_STP",
+            "SWITCH_CAP_LLDP_MED",
+            "SWITCH_CAP_EGRESS_RATE_LIMIT"
+        ],
+        "deviceCapabilities": [
+            "GATEWAY",
+            "SWITCH",
+            "ACCESS_POINT",
+            "NETWORK_APPLICATION"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "ax": true,
+            "bandsteer": true,
+            "poe": true
+        },
+        "subtypes": [
+            "ugw",
+            "usw",
+            "uap"
+        ],
+        "diagram": [
+            "01 02"
+        ],
+        "ports": {
+            "eth0": "LAN",
+            "eth1": "WAN"
+        },
+        "networkGroups": {
+            "eth0": "LAN",
+            "eth1": "WAN"
+        },
+        "linkNegotiation": {
+            "eth1": {
+                "portIdx": 2,
+                "supportedValues": [
+                    "autoneg",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            }
+        },
+        "radios": {
+            "na": {
+                "maxPower": 26,
+                "gain": 4
+            },
+            "ng": {
+                "maxPower": 26,
+                "gain": 3
+            }
+        },
+        "power": {
+            "capacity": 40
+        },
+        "adoptability": "standalone",
+        "bleServices": [
+            {
+                "default": "3243e044-ad0b-4872-a6d4-ab457f1afdcf",
+                "configured": "73fff104-20bd-40a7-b1ad-0a67d332a37b"
+            }
+        ]
+    },
+    "UXBSDM": {
+        "name": "UWB XG BK",
+        "names": {
+            "abbreviation": "UWB XG",
+            "fullName": "WiFi BaseStation XG",
+            "sku": "UWB-XG-BK"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPSTMXG",
+            "ic": "6545A-UAPSTMXG",
+            "displayName": "UniFi® WiFi BaseStation XG BK"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 10
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "UXG": {
+        "name": "UXG Lite",
+        "names": {
+            "abbreviation": "UXG Lite",
+            "fullName": "Next-Generation Gateway Lite",
+            "sku": "UXG"
+        },
+        "type": "uxg",
+        "deviceCapabilities": [
+            "GATEWAY"
+        ],
+        "subtypes": [
+            "ugw"
+        ],
+        "diagram": [
+            "01 02"
+        ],
+        "ports": {
+            "eth0": "LAN",
+            "eth1": "WAN",
+            "standard": [
+                0,
+                1
+            ]
+        },
+        "networkGroups": {
+            "eth0": "LAN",
+            "eth1": "WAN"
+        },
+        "linkNegotiation": {
+            "eth1": {
+                "portIdx": 2,
+                "supportedValues": [
+                    "autoneg",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            }
+        },
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "d778bd0f-7e04-4291-a6df-2c1fca78dd67",
+                "configured": "dc6b2b9a-4563-42bc-a7c1-e0b4f600bd2a"
+            }
+        ]
+    },
+    "UXGB": {
+        "name": "UXG",
+        "names": {
+            "abbreviation": "UXG",
+            "fullName": "Next-Generation Gateway",
+            "sku": "UXGB"
+        },
+        "type": "uxg",
+        "deviceCapabilities": [
+            "GATEWAY"
+        ],
+        "subtypes": [
+            "ugw"
+        ],
+        "diagram": [
+            "01 02 03 04 05"
+        ],
+        "ports": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "WAN",
+            "standard": [
+                0,
+                5
+            ]
+        },
+        "networkGroups": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "WAN"
+        },
+        "linkNegotiation": {
+            "eth4": {
+                "portIdx": 5,
+                "supportedValues": [
+                    "autoneg",
+                    "2500 FDX",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            }
+        },
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "bb7808f0-24ee-40ac-9e9f-ba227a47e8ad",
+                "configured": "8d75e543-0e64-40b1-b243-87d15dacb4ca"
+            }
+        ]
+    },
+    "UXGPRO": {
+        "name": "UXG Pro",
+        "names": {
+            "abbreviation": "UXG Pro",
+            "fullName": "Next-Generation Gateway Pro",
+            "sku": "UXG-Pro"
+        },
+        "type": "uxg",
+        "compliance": {
+            "fcc": "SWX-UXGPRO",
+            "ic": "6545A-UXGPRO",
+            "displayName": "UniFi® Next-Generation Gateway Pro"
+        },
+        "deviceCapabilities": [
+            "GATEWAY"
+        ],
+        "subtypes": [
+            "ugw"
+        ],
+        "diagram": [
+            "01 03",
+            "02 04"
+        ],
+        "primaryOutletGroupCount": 1,
+        "outletsDiagram": [
+            "01"
+        ],
+        "ports": {
+            "eth0": "WAN",
+            "eth1": "LAN",
+            "eth2": "WAN2",
+            "eth3": "LAN2",
+            "standard": [
+                0,
+                1
+            ],
+            "plus": [
+                2,
+                3
+            ]
+        },
+        "networkGroups": {
+            "eth0": "WAN",
+            "eth1": "LAN",
+            "eth2": "WAN2",
+            "eth3": "LAN2"
+        },
+        "linkNegotiation": {
+            "eth0": {
+                "portIdx": 1,
+                "supportedValues": [
+                    "autoneg",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth1": {
+                "portIdx": 2,
+                "supportedValues": [
+                    "autoneg",
+                    "1000 FDX",
+                    "100 FDX",
+                    "100 HDX",
+                    "10 FDX",
+                    "10 HDX"
+                ]
+            },
+            "eth2": {
+                "portIdx": 3,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            },
+            "eth3": {
+                "portIdx": 4,
+                "supportedValues": [
+                    "autoneg",
+                    "10000 FDX",
+                    "1000 FDX"
+                ]
+            }
+        },
+        "adoptability": "adoptable",
+        "bleServices": [
+            {
+                "default": "ae1655d6-86ec-4d42-a92d-42cf6a219e76",
+                "configured": "3d8bac06-22b2-4cf0-a974-bb256b4810f5"
+            }
+        ]
+    },
+    "UXSDM": {
+        "name": "UWB XG",
+        "names": {
+            "abbreviation": "UWB XG",
+            "fullName": "WiFi BaseStation XG",
+            "sku": "UWB-XG"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-UAPSTMXG",
+            "ic": "6545A-UAPSTMXG",
+            "displayName": "UniFi® WiFi BaseStation XG"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "gen": 2,
+            "ac": true,
+            "bandsteer": true,
+            "outdoorModeSupport": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 25,
+                "gain": 10
+            }
+        },
+        "adoptability": "adoptable"
+    },
+    "p2N": {
+        "name": "PICOM2HP",
+        "names": {
+            "abbreviation": "PicoStation HP",
+            "fullName": "PicoStation M2 HP",
+            "sku": "PICOM2HP"
+        },
+        "type": "uap",
+        "compliance": {
+            "fcc": "SWX-B2",
+            "ic": "6545A-B2",
+            "displayName": "PicoStation® 2HP"
+        },
+        "deviceCapabilities": [
+            "ACCESS_POINT"
+        ],
+        "features": {
+            "zh": true
+        },
+        "radios": {
+            "na": {
+                "maxPower": 22,
+                "gain": 3
+            },
+            "ng": {
+                "maxPower": 22,
+                "gain": 3
+            }
+        },
+        "adoptability": "adoptable"
+    }
+}
