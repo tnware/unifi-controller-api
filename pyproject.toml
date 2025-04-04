@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "unifi-controller-api"
-version = "0.1.0"
+version = "0.1.1"
 description = "A (read only) Python library for interacting with the Unifi Controller API"
 readme = "README.md"
 authors = [
@@ -31,6 +31,9 @@ dependencies = [
 
 [tool.setuptools]
 packages = ["unifi_controller_api"]
+
+    [tool.setuptools.package-data]
+    "unifi_controller_api" = ["models/*"]
 
     [tool.setuptools.package-data]
     unifi_controller_api = ["device-models.json"]
