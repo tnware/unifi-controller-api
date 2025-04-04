@@ -32,11 +32,8 @@ dependencies = [
 [tool.setuptools]
 packages = ["unifi_controller_api"]
 
-    [tool.setuptools.package-data]
-    "unifi_controller_api" = ["models/*"]
-
-    [tool.setuptools.package-data]
-    unifi_controller_api = ["device-models.json"]
+[tool.setuptools.package-data]
+"unifi_controller_api" = ["models/*", "device-models.json"]
 
 [project.optional-dependencies]
 dev = [
