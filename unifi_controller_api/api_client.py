@@ -549,7 +549,3 @@ class UnifiController:
                 raise UnifiModelError(error_msg) from e
 
         return report_data
-
-    def _load_device_models(self):
-        """Load device model database from JSON file."""
-        self.load_device_models()
