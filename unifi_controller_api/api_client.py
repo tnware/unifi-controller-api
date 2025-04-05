@@ -265,7 +265,8 @@ class UnifiController:
         return sites
 
     def get_unifi_site_device(
-        self, site_name, detailed=False, raw=False
+        self, site_name, detailed=False, raw=False,
+        mac: Optional[Union[str, List[str]]] = None
     ) -> Union[List[Dict[str, Any]], List[UnifiDevice]]:
         """
         Get information about devices on a specific Unifi site.
@@ -273,8 +274,10 @@ class UnifiController:
         Args:
             site_name: The name of the site to fetch devices from.
             detailed: Whether to fetch detailed device information.
-                      True uses /stat/device, False uses /rest/device.
+                      True uses /stat/device, False uses /stat/device-basic.
             raw: Whether to return raw API response. Defaults to False.
+            mac: Optional MAC address string or list of MAC strings to filter by.
+                 Defaults to None (no filtering).
 
         Returns:
             list: Device information. Returns a list of UnifiDevice objects unless raw=True.
@@ -289,6 +292,14 @@ class UnifiController:
             if detailed
             else f"{self.controller_url}/api/s/{site_name}/stat/device-basic"
         )
+
+        if mac is not None:
+            mac_list = [mac] if isinstance(mac, str) else mac
+            normalized_macs = [self.normalize_mac(m) for m in mac_list]
+            mac_query = ",".join(normalized_macs)
+            uri += f"?mac={mac_query}"
+            logger.info(f"Filtering devices by MAC(s): {mac_query}")
+
         logger.info(f"Fetching devices for site '{site_name}' from {uri}")
         response = self.invoke_get_rest_api_call(uri)
         raw_results = self._process_api_response(response, uri)
