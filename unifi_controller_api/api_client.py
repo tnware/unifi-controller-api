@@ -133,9 +133,8 @@ class UnifiController:
             login_uri = f"{self.controller_url}/api/login"
             logger.debug(f"Using legacy authentication endpoint: {login_uri}")
 
-        credentials = {"username": username, "password": "***REDACTED***"}
         logger.debug(
-            f"Attempting authentication with credentials: {credentials}")
+            f"Attempting authentication with username: {username}")
         try:
             response = self.session.post(
                 login_uri,
