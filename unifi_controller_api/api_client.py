@@ -333,8 +333,9 @@ class UnifiController:
         self, site_name, raw=False
     ) -> Union[List[Dict[str, Any]], List[UnifiClient]]:
         """
-        Get information about clients (users/devices) on a specific Unifi site.
+        Get information about active clients (stations) on a specific Unifi site.
         Uses @dataclass for the returned objects, applying consistent model mapping.
+        Endpoint changed to /stat/sta for potentially better active client data (including IP).
 
         Args:
             site_name: The name of the site to fetch clients from.
@@ -348,8 +349,9 @@ class UnifiController:
             UnifiDataError: If the API response cannot be parsed.
             UnifiModelError: If data cannot be mapped to the UnifiClient model.
         """
-        uri = f"{self.controller_url}/api/s/{site_name}/rest/user"
-        logger.info(f"Fetching clients for site '{site_name}' from {uri}")
+        uri = f"{self.controller_url}/api/s/{site_name}/stat/sta"
+        logger.info(
+            f"Fetching active clients for site '{site_name}' from {uri}")
         response = self.invoke_get_rest_api_call(uri)
         raw_results = self._process_api_response(response, uri)
 
