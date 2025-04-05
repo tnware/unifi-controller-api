@@ -8,6 +8,7 @@ from typing import List, Dict, Any, Union, Optional
 
 from .models.site import UnifiSite
 from .models.device import UnifiDevice
+from .models.client import UnifiClient
 from .logging import get_logger
 from .utils import resolve_model_names, map_api_data_to_model
 from .exceptions import (
@@ -133,7 +134,8 @@ class UnifiController:
             logger.debug(f"Using legacy authentication endpoint: {login_uri}")
 
         credentials = {"username": username, "password": "***REDACTED***"}
-        logger.debug(f"Attempting authentication with credentials: {credentials}")
+        logger.debug(
+            f"Attempting authentication with credentials: {credentials}")
         try:
             response = self.session.post(
                 login_uri,
@@ -248,72 +250,123 @@ class UnifiController:
 
         sites = []
         for site_data in raw_results:
-            model_fields, extra_fields = map_api_data_to_model(site_data, UnifiSite)
-
-            site = UnifiSite(**model_fields)
-
-            if hasattr(site, "_extra_fields"):
-                site._extra_fields = extra_fields
-
-            sites.append(site)
+            model_fields, extra_fields = map_api_data_to_model(
+                site_data, UnifiSite
+            )
+            try:
+                site = UnifiSite(**model_fields)
+                if hasattr(site, "_extra_fields"):
+                    site._extra_fields = extra_fields
+                sites.append(site)
+            except Exception as e:
+                logger.error(
+                    f"Error creating UnifiSite model from data: {site_data}. Error: {e}")
 
         return sites
 
     def get_unifi_site_device(
-        self, site_name, detailed=False, mac=None, raw=False
+        self, site_name, detailed=False, raw=False
     ) -> Union[List[Dict[str, Any]], List[UnifiDevice]]:
         """
-        Get information about devices at a specific UniFi site.
+        Get information about devices on a specific Unifi site.
 
         Args:
-            site_name: Name of the site to get devices for.
-            detailed: Whether to include detailed device information. Defaults to False.
-            mac: Optional MAC address or list of MAC addresses to filter by. Defaults to None.
+            site_name: The name of the site to fetch devices from.
+            detailed: Whether to fetch detailed device information.
+                      True uses /stat/device, False uses /rest/device.
             raw: Whether to return raw API response. Defaults to False.
 
         Returns:
-            list: Device information for the site.
-                 Returns a list of UnifiDevice objects unless raw=True.
+            list: Device information. Returns a list of UnifiDevice objects unless raw=True.
 
         Raises:
             UnifiAPIError: If the API request fails.
             UnifiDataError: If the API response cannot be parsed.
+            UnifiModelError: If data cannot be mapped to the UnifiDevice model.
         """
-        if detailed:
-            uri = f"{self.controller_url}/api/s/{site_name}/stat/device"
-        else:
-            uri = f"{self.controller_url}/api/s/{site_name}/stat/device-basic"
-
-        if mac:
-            mac_list = [mac] if isinstance(mac, str) else mac
-            mac_list = [self.normalize_mac(m) for m in mac_list]
-            uri = f"{uri}?mac={','.join(mac_list)}"
-
+        uri = (
+            f"{self.controller_url}/api/s/{site_name}/stat/device"
+            if detailed
+            else f"{self.controller_url}/api/s/{site_name}/stat/device-basic"
+        )
+        logger.info(f"Fetching devices for site '{site_name}' from {uri}")
         response = self.invoke_get_rest_api_call(uri)
         raw_results = self._process_api_response(response, uri)
 
         if raw:
+            logger.debug("Returning raw device data.")
             return raw_results
 
         devices = []
         for device_data in raw_results:
-            model_fields, extra_fields = map_api_data_to_model(device_data, UnifiDevice)
+            model_fields, _extra_fields = map_api_data_to_model(
+                device_data, UnifiDevice
+            )
+            try:
+                device = UnifiDevice(**model_fields)
+                if not hasattr(device, 'site_name') or not device.site_name:
+                    device.site_name = site_name
+                devices.append(device)
+            except Exception as e:
+                logger.error(
+                    f"Error creating UnifiDevice model from data: {device_data}. Error: {e}")
 
-            if "mac" not in model_fields and "mac" in device_data:
-                model_fields["mac"] = device_data["mac"]
-
-            device = UnifiDevice(**model_fields)
-
-            device._extra_fields = extra_fields
-
-            device.site_name = site_name
-
-            devices.append(device)
-
-        if self.auto_model_mapping and devices:
+        if devices and self.auto_model_mapping:
+            logger.debug("Resolving model names for devices.")
             resolve_model_names(devices, self.model_db_path)
 
+        logger.debug(f"Returning {len(devices)} mapped UnifiDevice objects.")
         return devices
+
+    def get_unifi_site_client(
+        self, site_name, raw=False
+    ) -> Union[List[Dict[str, Any]], List[UnifiClient]]:
+        """
+        Get information about clients (users/devices) on a specific Unifi site.
+        Uses @dataclass for the returned objects, applying consistent model mapping.
+
+        Args:
+            site_name: The name of the site to fetch clients from.
+            raw: Whether to return raw API response. Defaults to False.
+
+        Returns:
+            list: Client information. Returns a list of UnifiClient objects unless raw=True.
+
+        Raises:
+            UnifiAPIError: If the API request fails.
+            UnifiDataError: If the API response cannot be parsed.
+            UnifiModelError: If data cannot be mapped to the UnifiClient model.
+        """
+        uri = f"{self.controller_url}/api/s/{site_name}/rest/user"
+        logger.info(f"Fetching clients for site '{site_name}' from {uri}")
+        response = self.invoke_get_rest_api_call(uri)
+        raw_results = self._process_api_response(response, uri)
+
+        if raw:
+            logger.debug("Returning raw client data.")
+            return raw_results
+
+        clients = []
+        for client_data in raw_results:
+            try:
+                model_fields, _extra_fields = map_api_data_to_model(
+                    client_data, UnifiClient
+                )
+
+                client = UnifiClient(**model_fields)
+
+                clients.append(client)
+
+            except TypeError as e:
+                logger.error(
+                    f"Error instantiating UnifiClient dataclass (likely missing fields): {model_fields}. Error: {e}")
+            except Exception as e:
+                logger.error(
+                    f"Error processing client data into dataclass: {client_data}. Error: {e}")
+
+        logger.debug(
+            f"Returning {len(clients)} mapped UnifiClient dataclass objects (using map_api_data_to_model).")
+        return clients
 
     def normalize_mac(self, mac_address):
         """
@@ -326,10 +379,11 @@ class UnifiController:
             str: MAC address with colons between each pair of characters.
         """
         mac_clean = (
-            mac_address.replace(":", "").replace("-", "").replace(".", "").lower()
+            mac_address.replace(":", "").replace(
+                "-", "").replace(".", "").lower()
         )
 
-        return ":".join(mac_clean[i : i + 2] for i in range(0, len(mac_clean), 2))
+        return ":".join(mac_clean[i: i + 2] for i in range(0, len(mac_clean), 2))
 
     def load_device_models(self, force_reload=False):
         """
@@ -380,7 +434,8 @@ class UnifiController:
         devices = self.devices_report(sites, device_models_json_path)
 
         if not devices:
-            logger.info("No device data found across any sites. Creating empty CSV.")
+            logger.info(
+                "No device data found across any sites. Creating empty CSV.")
             with open(output_csv_path, "w", newline="", encoding="utf-8") as csvfile:
                 csvfile.write("")
             return
@@ -397,7 +452,8 @@ class UnifiController:
                 attr_name = field
 
                 if attr_name == "site_name" and (
-                    not hasattr(device, attr_name) or getattr(device, attr_name) is None
+                    not hasattr(device, attr_name) or getattr(
+                        device, attr_name) is None
                 ):
                     device_dict[field] = "Unknown Site"
                 elif hasattr(device, attr_name):
@@ -448,7 +504,8 @@ class UnifiController:
                 site_id = site.get("name")
 
             try:
-                devices = self.get_unifi_site_device(site_name=site_id, detailed=True)
+                devices = self.get_unifi_site_device(
+                    site_name=site_id, detailed=True)
 
                 for device in devices:
                     if isinstance(device, UnifiDevice) and not device.unifi_id:
@@ -460,7 +517,8 @@ class UnifiController:
                     )
                     continue
 
-                valid_devices = [d for d in devices if isinstance(d, UnifiDevice)]
+                valid_devices = [
+                    d for d in devices if isinstance(d, UnifiDevice)]
                 if len(valid_devices) != len(devices):
                     logger.warning(
                         f"Some devices for site {site_name} were not UnifiDevice objects"
@@ -468,7 +526,8 @@ class UnifiController:
                 report_data.extend(valid_devices)
 
             except (UnifiAPIError, UnifiDataError) as e:
-                logger.error(f"Error getting devices for site {site_name}: {e}")
+                logger.error(
+                    f"Error getting devices for site {site_name}: {e}")
 
         if report_data and self.auto_model_mapping:
             try:
@@ -479,3 +538,7 @@ class UnifiController:
                 raise UnifiModelError(error_msg) from e
 
         return report_data
+
+    def _load_device_models(self):
+        """Load device model database from JSON file."""
+        self.load_device_models()
