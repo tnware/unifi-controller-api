@@ -58,10 +58,12 @@ class UnifiController:
         username,
         password,
         is_udm_pro=False,
-        disable_ssl_warnings=False,
         verify_ssl=True,
         auto_model_mapping=True,
         model_db_path=None,
+        auth_retry_enabled=True,
+        auth_retry_count=3,
+        auth_retry_delay=1,
     ):
         """
         Initialize the Unifi Controller client and authenticate.
@@ -73,8 +75,6 @@ class UnifiController:
             is_udm_pro: Whether the controller is a UniFi OS device. Set to True for:
                         UDM, UDM Pro, UDR, Cloud Key Gen2 (2.0.24+), UX, UDW,
                         UCG-Ultra, CK-Enterprise, and EFG. Defaults to False.
-            disable_ssl_warnings: Whether to disable SSL warnings when verify_ssl is False.
-                                Defaults to False.
             verify_ssl: Whether to verify SSL certificates. Can be:
                        - True: Verify SSL certificates (default, recommended)
                        - False: Disable verification (insecure, not recommended)
@@ -83,7 +83,18 @@ class UnifiController:
                               database. Defaults to True.
             model_db_path: Optional custom path to the device model database JSON file.
                          If None, uses the built-in device-models.json file. Defaults to None.
+            auth_retry_enabled: Whether to automatically retry authentication when session expires.
+                             Defaults to True.
+            auth_retry_count: Maximum number of authentication retry attempts (1-10).
+                           Defaults to 3.
+            auth_retry_delay: Delay in seconds between retry attempts (0.1-30).
+                           Defaults to 1.
         """
+        # Validate retry parameters
+        if auth_retry_count < 1 or auth_retry_count > 10:
+            raise ValueError("auth_retry_count must be between 1 and 10")
+        if auth_retry_delay < 0.1 or auth_retry_delay > 30:
+            raise ValueError("auth_retry_delay must be between 0.1 and 30")
 
         logger.debug(
             f"Initializing UnifiController with URL: {controller_url}, is_udm_pro: {is_udm_pro}"
@@ -94,6 +105,10 @@ class UnifiController:
         self.verify_ssl = verify_ssl
         self.auto_model_mapping = auto_model_mapping
 
+        self.auth_retry_enabled = auth_retry_enabled
+        self.auth_retry_count = auth_retry_count
+        self.auth_retry_delay = auth_retry_delay
+
         if model_db_path is None:
             self.model_db_path = os.path.join(
                 os.path.dirname(__file__), "device-models.json"
@@ -103,15 +118,11 @@ class UnifiController:
 
         self._device_models = None
 
-        if disable_ssl_warnings and not verify_ssl:
+        if not verify_ssl:
             logger.warning(
                 "SSL certificate verification is disabled. This is not recommended for production use."
             )
             urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-        elif not verify_ssl:
-            logger.warning(
-                "SSL certificate verification is disabled but SSL warnings are enabled. You may see warning messages."
-            )
 
         self.authenticate(username, password)
 
@@ -130,6 +141,9 @@ class UnifiController:
         Raises:
             UnifiAuthenticationError: If authentication fails.
         """
+        self._username = username
+        self._password = password
+
         if self.is_udm_pro:
             login_uri = f"{self.controller_url}/api/auth/login"
             logger.debug(f"Using UDM Pro authentication endpoint: {login_uri}")
@@ -162,7 +176,11 @@ class UnifiController:
 
     def invoke_get_rest_api_call(self, url, headers=None):
         """
-        Make a GET request to the UniFi Controller REST API.
+        Make a GET request to the UniFi Controller REST API with automatic session renewal.
+
+        When a 401 Unauthorized error is received (indicating an expired session),
+        this method will automatically attempt to re-authenticate and retry the request
+        according to the configured retry settings.
 
         Args:
             url: The URL to send the GET request to.
@@ -173,22 +191,68 @@ class UnifiController:
 
         Raises:
             UnifiAPIError: If the API request fails.
+            UnifiAuthenticationError: If re-authentication fails.
         """
         try:
             if headers:
                 response = self.session.get(
-                    url, headers=headers, verify=self.verify_ssl
-                )
+                    url, headers=headers, verify=self.verify_ssl)
             else:
                 response = self.session.get(url, verify=self.verify_ssl)
+
+            if response.status_code == 401 and self.auth_retry_enabled:
+                if hasattr(self, '_username') and hasattr(self, '_password'):
+                    for retry in range(self.auth_retry_count):
+                        try:
+                            if retry > 0 and self.auth_retry_delay > 0:
+                                import time
+                                time.sleep(self.auth_retry_delay)
+
+                            logger.warning(
+                                f"Received 401 Unauthorized from {url}. "
+                                f"Attempting re-authentication (try {retry+1}/{self.auth_retry_count})..."
+                            )
+
+                            self.authenticate(self._username, self._password)
+                            logger.info(
+                                "Re-authentication successful. Retrying original request.")
+
+                            if headers:
+                                response = self.session.get(
+                                    url, headers=headers, verify=self.verify_ssl)
+                            else:
+                                response = self.session.get(
+                                    url, verify=self.verify_ssl)
+
+                            if response.status_code != 401:
+                                break
+
+                            logger.warning(
+                                "Request still failed with 401 after re-authentication.")
+
+                        except UnifiAuthenticationError as auth_err:
+                            logger.error(
+                                f"Re-authentication failed: {auth_err}")
+
+                    if response.status_code == 401:
+                        raise UnifiAuthenticationError(
+                            f"Authentication failed after {self.auth_retry_count} attempts. "
+                            "Session could not be renewed."
+                        )
+                else:
+                    logger.error(
+                        "Cannot re-authenticate: credentials not available")
 
             response.raise_for_status()
             logger.debug(f"API GET request to {url} successful")
             return response
+
         except requests.exceptions.RequestException as e:
-            error_msg = f"API GET request to {url} failed: {str(e)}"
-            logger.error(error_msg)
-            raise UnifiAPIError(error_msg) from e
+            if not isinstance(e, UnifiAuthenticationError):
+                error_msg = f"API GET request to {url} failed: {str(e)}"
+                logger.error(error_msg)
+                raise UnifiAPIError(error_msg) from e
+            raise
 
     def _process_api_response(
         self, response: Optional[requests.Response], uri: str

@@ -28,7 +28,11 @@ controller = UnifiController(
     controller_url="https://unifi.local",
     username="admin",
     password="password",
-    is_udm_pro=True  # Set to True for UDM Pro, Cloud Key Gen2, etc.
+    is_udm_pro=True,  # Set to True for UDM Pro, Cloud Key Gen2, etc.
+    # Optional: Configure authentication retry behavior
+    auth_retry_enabled=True, # Default: True
+    auth_retry_count=3,    # Default: 3 attempts
+    auth_retry_delay=1     # Default: 1 second delay
 )
 
 # Get all sites
