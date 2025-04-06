@@ -117,7 +117,6 @@ def map_api_data_to_model(
     valid_params.discard("self")
 
     field_map = get_api_field_mapping(model_class)
-    reverse_field_map = {v: k for k, v in field_map.items()}
 
     model_fields = {}
     extra_fields = {}

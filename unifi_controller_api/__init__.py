@@ -6,7 +6,7 @@ allowing read-only access to sites, devices, and other network information.
 """
 
 from .api_client import UnifiController
-from .models import UnifiSite, UnifiDevice, LLDPEntry
+from .models import UnifiSite, UnifiDevice, LLDPEntry, UnifiClient
 from .export import export_csv, export_json, to_dict_list
 from .exceptions import (
     UnifiControllerError,
@@ -21,6 +21,7 @@ __all__ = [
     "UnifiSite",
     "UnifiDevice",
     "LLDPEntry",
+    "UnifiClient",
     "export_csv",
     "export_json",
     "to_dict_list",
