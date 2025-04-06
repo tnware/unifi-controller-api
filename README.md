@@ -1,8 +1,7 @@
 # unifi-controller-api
 
-A lightweight, read-only Python client for the Unifi Network Controller API (UniFi OS & Legacy), providing structured data access.
+A Python client library for interacting with Ubiquiti UniFi Network Controllers.
 
----
 
 ## Core Features
 
