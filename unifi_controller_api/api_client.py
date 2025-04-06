@@ -15,6 +15,7 @@ from .models.alarm import UnifiAlarm
 from .models.wlanconf import UnifiWlanConf
 from .models.rogueap import UnifiRogueAp
 from .models.networkconf import UnifiNetworkConf
+from .models.health import UnifiHealth, UnifiSubsystemHealth
 from .logging import get_logger
 from .utils import resolve_model_names, map_api_data_to_model
 from .exceptions import (
@@ -848,3 +849,57 @@ class UnifiController:
                 raise UnifiModelError(error_msg) from e
 
         return report_data
+
+    def get_unifi_site_health(
+        self, site_name, raw=False
+    ) -> Union[List[Dict[str, Any]], UnifiHealth]:
+        """
+        Get detailed health information for a specific UniFi site.
+
+        This directly uses the /api/s/{site_name}/stat/health endpoint which provides
+        subsystem-level health data in a more lightweight format than the full site data.
+
+        Args:
+            site_name: The name of the site to fetch health data for.
+            raw: Whether to return raw API response. Defaults to False.
+
+        Returns:
+            UnifiHealth: A structured object with health data organized by subsystem if raw=False.
+            list: Raw health data from the API if raw=True.
+
+        Raises:
+            UnifiAPIError: If the API request fails.
+            UnifiDataError: If the API response cannot be parsed.
+        """
+        uri = f"{self.controller_url}/api/s/{site_name}/stat/health"
+        logger.info(f"Fetching health data for site '{site_name}' from {uri}")
+        response = self.invoke_get_rest_api_call(uri)
+        raw_results = self._process_api_response(response, uri)
+
+        if raw:
+            logger.debug("Returning raw health data.")
+            return raw_results
+
+        # Create a UnifiHealth object with subsystems
+        health = UnifiHealth(site_name=site_name)
+
+        for subsystem_data in raw_results:
+            if 'subsystem' not in subsystem_data:
+                continue
+
+            subsystem_name = subsystem_data['subsystem']
+            # Map API data to the UnifiSubsystemHealth model
+            model_fields, extra_fields = map_api_data_to_model(
+                subsystem_data, UnifiSubsystemHealth
+            )
+
+            try:
+                subsystem = UnifiSubsystemHealth(**model_fields)
+                if hasattr(subsystem, '_extra_fields'):
+                    subsystem._extra_fields = extra_fields
+                health.subsystems[subsystem_name] = subsystem
+            except Exception as e:
+                logger.error(
+                    f"Error creating UnifiSubsystemHealth model from data: {subsystem_data}. Error: {e}")
+
+        return health
