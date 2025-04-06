@@ -12,6 +12,8 @@ from .models.client import UnifiClient
 from .models.event import UnifiEvent
 from .models.alarm import UnifiAlarm
 from .models.wlanconf import UnifiWlanConf
+from .models.rogueap import UnifiRogueAp
+from .models.networkconf import UnifiNetworkConf
 from .logging import get_logger
 from .utils import resolve_model_names, map_api_data_to_model
 from .exceptions import (
@@ -516,6 +518,101 @@ class UnifiController:
         logger.debug(
             f"Returning {len(wlanconfs)} mapped UnifiWlanConf objects.")
         return wlanconfs
+
+    def get_unifi_site_rogueap(
+        self, site_name, raw=False
+    ) -> Union[List[Dict[str, Any]], List[UnifiRogueAp]]:
+        """
+        Get neighboring APs (often termed "rogue" APs) detected by UniFi APs on a specific site.
+
+        Args:
+            site_name: The name of the site to fetch neighboring APs from.
+            raw: Whether to return raw API response. Defaults to False.
+
+        Returns:
+            list: Neighboring AP information. Returns a list of UnifiRogueAp objects unless raw=True.
+
+        Raises:
+            UnifiAPIError: If the API request fails.
+            UnifiDataError: If the API response cannot be parsed.
+            UnifiModelError: If data cannot be mapped to the UnifiRogueAp model.
+        """
+        uri = f"{self.controller_url}/api/s/{site_name}/stat/rogueap"
+        logger.info(
+            f"Fetching neighboring APs for site '{site_name}' from {uri}")
+        response = self.invoke_get_rest_api_call(uri)
+        raw_results = self._process_api_response(response, uri)
+
+        if raw:
+            logger.debug("Returning raw neighboring AP data.")
+            return raw_results
+
+        rogueaps = []
+        for ap_data in raw_results:
+            try:
+                model_fields, extra_fields = map_api_data_to_model(
+                    ap_data, UnifiRogueAp
+                )
+                ap = UnifiRogueAp(**model_fields)
+                if hasattr(ap, '_extra_fields'):
+                    ap._extra_fields = extra_fields
+                rogueaps.append(ap)
+            except Exception as e:
+                logger.error(
+                    f"Error creating UnifiRogueAp model from data: {ap_data}. Error: {e}"
+                )
+
+        logger.debug(f"Returning {len(rogueaps)} mapped UnifiRogueAp objects.")
+        return rogueaps
+
+    def get_unifi_site_networkconf(
+        self, site_name, raw=False
+    ) -> Union[List[Dict[str, Any]], List[UnifiNetworkConf]]:
+        """
+        Get network configurations (LANs, VLANs, etc.) for a specific Unifi site.
+
+        Args:
+            site_name: The name of the site to fetch network configurations from.
+            raw: Whether to return raw API response. Defaults to False.
+
+        Returns:
+            list: Network configuration information. Returns a list of UnifiNetworkConf objects unless raw=True.
+
+        Raises:
+            UnifiAPIError: If the API request fails.
+            UnifiDataError: If the API response cannot be parsed.
+            UnifiModelError: If data cannot be mapped to the UnifiNetworkConf model.
+        """
+        uri = f"{self.controller_url}/api/s/{site_name}/rest/networkconf"
+        logger.info(
+            f"Fetching network configurations for site '{site_name}' from {uri}"
+        )
+        response = self.invoke_get_rest_api_call(uri)
+        raw_results = self._process_api_response(response, uri)
+
+        if raw:
+            logger.debug("Returning raw network configuration data.")
+            return raw_results
+
+        networkconfs = []
+        for conf_data in raw_results:
+            try:
+                model_fields, extra_fields = map_api_data_to_model(
+                    conf_data, UnifiNetworkConf
+                )
+                conf = UnifiNetworkConf(**model_fields)
+                if hasattr(conf, '_extra_fields'):
+                    conf._extra_fields = extra_fields
+                networkconfs.append(conf)
+            except Exception as e:
+                logger.error(
+                    f"Error creating UnifiNetworkConf model from data: {conf_data}. Error: {e}"
+                )
+
+        logger.debug(
+            f"Returning {len(networkconfs)} mapped UnifiNetworkConf objects."
+        )
+        return networkconfs
 
     def normalize_mac(self, mac_address):
         """

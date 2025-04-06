@@ -10,6 +10,8 @@ from .client import UnifiClient
 from .event import UnifiEvent
 from .alarm import UnifiAlarm
 from .wlanconf import UnifiWlanConf
+from .rogueap import UnifiRogueAp
+from .networkconf import UnifiNetworkConf
 
 __all__ = [
     "UnifiDevice",
@@ -18,5 +20,7 @@ __all__ = [
     "UnifiClient",
     "UnifiEvent",
     "UnifiAlarm",
-    "UnifiWlanConf"
+    "UnifiWlanConf",
+    "UnifiRogueAp",
+    "UnifiNetworkConf"
 ]
