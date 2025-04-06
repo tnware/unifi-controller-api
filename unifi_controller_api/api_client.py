@@ -1,5 +1,6 @@
 import json
 import os
+import time
 
 import requests
 import urllib3
@@ -205,7 +206,6 @@ class UnifiController:
                     for retry in range(self.auth_retry_count):
                         try:
                             if retry > 0 and self.auth_retry_delay > 0:
-                                import time
                                 time.sleep(self.auth_retry_delay)
 
                             logger.warning(
