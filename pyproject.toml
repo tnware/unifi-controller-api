@@ -4,26 +4,22 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "unifi-controller-api"
-version = "0.1.1"
+version = "0.2.1"
 description = "A (read only) Python library for interacting with the Unifi Controller API"
 readme = "README.md"
-authors = [
-    {name = "Tyler Woods", email = "tyler@tylermade.net"}
-]
-license = {text = "MIT"}
+authors = [{ name = "Tyler Woods", email = "tyler@tylermade.net" }]
+license = { text = "MIT" }
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Topic :: System :: Networking :: Monitoring",
     "Topic :: Software Development :: Libraries :: Python Modules",
-    "Topic :: Utilities"
+    "Topic :: Utilities",
 ]
 requires-python = ">=3.8"
 
-dependencies = [
-    "requests",
-]
+dependencies = ["requests"]
 
 [project.urls]
 "Homepage" = "https://github.com/tnware/unifi-controller-api"
@@ -41,5 +37,5 @@ dev = [
     "pytest-cov>=2.12",
     "pytest-mock>=3.10.0",
     "python-dotenv>=1.0.0",
-    "ruff>=0.1.1"
+    "ruff>=0.1.1",
 ]
