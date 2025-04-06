@@ -31,11 +31,9 @@ class UnifiRogueAp:
     signal: int
     site_id: str
 
-    # Optional fields that might not always be present
     center_freq: Optional[int] = None
-    age: Optional[int] = None  # Often seems redundant with rssi_age
+    age: Optional[int] = None
 
-    # Store any extra fields not explicitly defined
     _extra_fields: Dict[str, Any] = field(default_factory=dict, repr=False)
 
     def to_dict(self) -> Dict[str, Any]:
