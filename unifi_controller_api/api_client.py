@@ -9,6 +9,8 @@ from typing import List, Dict, Any, Union, Optional
 from .models.site import UnifiSite
 from .models.device import UnifiDevice
 from .models.client import UnifiClient
+from .models.event import UnifiEvent
+from .models.alarm import UnifiAlarm
 from .logging import get_logger
 from .utils import resolve_model_names, map_api_data_to_model
 from .exceptions import (
@@ -379,6 +381,94 @@ class UnifiController:
         logger.debug(
             f"Returning {len(clients)} mapped UnifiClient dataclass objects (using map_api_data_to_model).")
         return clients
+
+    def get_unifi_site_event(
+        self, site_name, raw=False
+    ) -> Union[List[Dict[str, Any]], List[UnifiEvent]]:
+        """
+        Get event logs for a specific Unifi site.
+
+        Args:
+            site_name: The name of the site to fetch events from.
+            raw: Whether to return raw API response. Defaults to False.
+
+        Returns:
+            list: Event log information. Returns a list of UnifiEvent objects unless raw=True.
+
+        Raises:
+            UnifiAPIError: If the API request fails.
+            UnifiDataError: If the API response cannot be parsed.
+            UnifiModelError: If data cannot be mapped to the UnifiEvent model.
+        """
+        uri = f"{self.controller_url}/api/s/{site_name}/stat/event"
+        logger.info(f"Fetching events for site '{site_name}' from {uri}")
+        response = self.invoke_get_rest_api_call(uri)
+        raw_results = self._process_api_response(response, uri)
+
+        if raw:
+            logger.debug("Returning raw event data.")
+            return raw_results
+
+        events = []
+        for event_data in raw_results:
+            try:
+                model_fields, extra_fields = map_api_data_to_model(
+                    event_data, UnifiEvent
+                )
+                event = UnifiEvent(**model_fields)
+                if hasattr(event, '_extra_fields'):
+                    event._extra_fields = extra_fields
+                events.append(event)
+            except Exception as e:
+                logger.error(
+                    f"Error creating UnifiEvent model from data: {event_data}. Error: {e}")
+
+        logger.debug(f"Returning {len(events)} mapped UnifiEvent objects.")
+        return events
+
+    def get_unifi_site_alarm(
+        self, site_name, raw=False
+    ) -> Union[List[Dict[str, Any]], List[UnifiAlarm]]:
+        """
+        Get alarm logs for a specific Unifi site.
+
+        Args:
+            site_name: The name of the site to fetch alarms from.
+            raw: Whether to return raw API response. Defaults to False.
+
+        Returns:
+            list: Alarm log information. Returns a list of UnifiAlarm objects unless raw=True.
+
+        Raises:
+            UnifiAPIError: If the API request fails.
+            UnifiDataError: If the API response cannot be parsed.
+            UnifiModelError: If data cannot be mapped to the UnifiAlarm model.
+        """
+        uri = f"{self.controller_url}/api/s/{site_name}/stat/alarm"
+        logger.info(f"Fetching alarms for site '{site_name}' from {uri}")
+        response = self.invoke_get_rest_api_call(uri)
+        raw_results = self._process_api_response(response, uri)
+
+        if raw:
+            logger.debug("Returning raw alarm data.")
+            return raw_results
+
+        alarms = []
+        for alarm_data in raw_results:
+            try:
+                model_fields, extra_fields = map_api_data_to_model(
+                    alarm_data, UnifiAlarm
+                )
+                alarm = UnifiAlarm(**model_fields)
+                if hasattr(alarm, '_extra_fields'):
+                    alarm._extra_fields = extra_fields
+                alarms.append(alarm)
+            except Exception as e:
+                logger.error(
+                    f"Error creating UnifiAlarm model from data: {alarm_data}. Error: {e}")
+
+        logger.debug(f"Returning {len(alarms)} mapped UnifiAlarm objects.")
+        return alarms
 
     def normalize_mac(self, mac_address):
         """
