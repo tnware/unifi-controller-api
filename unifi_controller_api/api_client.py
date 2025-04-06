@@ -11,6 +11,7 @@ from .models.device import UnifiDevice
 from .models.client import UnifiClient
 from .models.event import UnifiEvent
 from .models.alarm import UnifiAlarm
+from .models.wlanconf import UnifiWlanConf
 from .logging import get_logger
 from .utils import resolve_model_names, map_api_data_to_model
 from .exceptions import (
@@ -469,6 +470,52 @@ class UnifiController:
 
         logger.debug(f"Returning {len(alarms)} mapped UnifiAlarm objects.")
         return alarms
+
+    def get_unifi_site_wlanconf(
+        self, site_name, raw=False
+    ) -> Union[List[Dict[str, Any]], List[UnifiWlanConf]]:
+        """
+        Get WLAN configurations for a specific Unifi site.
+
+        Args:
+            site_name: The name of the site to fetch WLAN configurations from.
+            raw: Whether to return raw API response. Defaults to False.
+
+        Returns:
+            list: WLAN configuration information. Returns a list of UnifiWlanConf objects unless raw=True.
+
+        Raises:
+            UnifiAPIError: If the API request fails.
+            UnifiDataError: If the API response cannot be parsed.
+            UnifiModelError: If data cannot be mapped to the UnifiWlanConf model.
+        """
+        uri = f"{self.controller_url}/api/s/{site_name}/rest/wlanconf"
+        logger.info(
+            f"Fetching WLAN configurations for site '{site_name}' from {uri}")
+        response = self.invoke_get_rest_api_call(uri)
+        raw_results = self._process_api_response(response, uri)
+
+        if raw:
+            logger.debug("Returning raw WLAN configuration data.")
+            return raw_results
+
+        wlanconfs = []
+        for conf_data in raw_results:
+            try:
+                model_fields, extra_fields = map_api_data_to_model(
+                    conf_data, UnifiWlanConf
+                )
+                conf = UnifiWlanConf(**model_fields)
+                if hasattr(conf, '_extra_fields'):
+                    conf._extra_fields = extra_fields
+                wlanconfs.append(conf)
+            except Exception as e:
+                logger.error(
+                    f"Error creating UnifiWlanConf model from data: {conf_data}. Error: {e}")
+
+        logger.debug(
+            f"Returning {len(wlanconfs)} mapped UnifiWlanConf objects.")
+        return wlanconfs
 
     def normalize_mac(self, mac_address):
         """
