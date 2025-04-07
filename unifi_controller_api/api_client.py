@@ -16,6 +16,7 @@ from .models.wlanconf import UnifiWlanConf
 from .models.rogueap import UnifiRogueAp
 from .models.networkconf import UnifiNetworkConf
 from .models.health import UnifiHealth, UnifiSubsystemHealth
+from .models.portconf import UnifiPortConf
 from .logging import get_logger
 from .utils import resolve_model_names, map_api_data_to_model
 from .exceptions import (
@@ -903,3 +904,52 @@ class UnifiController:
                     f"Error creating UnifiSubsystemHealth model from data: {subsystem_data}. Error: {e}")
 
         return health
+
+    def get_unifi_site_portconf(
+        self, site_name, raw=False
+    ) -> Union[List[Dict[str, Any]], List[UnifiPortConf]]:
+        """
+        Get port profile configurations for a specific UniFi site.
+
+        This method retrieves port profiles that can be applied to switch ports,
+        including operation mode, PoE settings, VLAN configurations, and security controls.
+
+        Args:
+            site_name: The name of the site to fetch port profiles from.
+            raw: Whether to return raw API response. Defaults to False.
+
+        Returns:
+            list: Port profile information. Returns a list of UnifiPortConf objects unless raw=True.
+
+        Raises:
+            UnifiAPIError: If the API request fails.
+            UnifiDataError: If the API response cannot be parsed.
+            UnifiModelError: If data cannot be mapped to the UnifiPortConf model.
+        """
+        uri = f"{self.controller_url}/api/s/{site_name}/rest/portconf"
+        logger.info(
+            f"Fetching port profiles for site '{site_name}' from {uri}")
+        response = self.invoke_get_rest_api_call(uri)
+        raw_results = self._process_api_response(response, uri)
+
+        if raw:
+            logger.debug("Returning raw port profile data.")
+            return raw_results
+
+        port_confs = []
+        for conf_data in raw_results:
+            try:
+                model_fields, extra_fields = map_api_data_to_model(
+                    conf_data, UnifiPortConf
+                )
+                conf = UnifiPortConf(**model_fields)
+                if hasattr(conf, '_extra_fields'):
+                    conf._extra_fields = extra_fields
+                port_confs.append(conf)
+            except Exception as e:
+                logger.error(
+                    f"Error creating UnifiPortConf model from data: {conf_data}. Error: {e}")
+
+        logger.debug(
+            f"Returning {len(port_confs)} mapped UnifiPortConf objects.")
+        return port_confs
