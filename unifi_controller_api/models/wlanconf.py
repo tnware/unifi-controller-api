@@ -76,16 +76,10 @@ class UnifiWlanConf:
     wpa3_support: bool
     wpa3_transition: bool
     pmf_mode: str
-    hide_ssid: bool
     networkconf_id: str
     usergroup_id: str
     schedule_enabled: bool
-    l2_isolation: bool
-    mcastenhance_enabled: bool
-    proxy_arp: bool
     bss_transition: bool
-    fast_roaming_enabled: bool
-    optimize_iot_wifi_connectivity: bool
     minrate_setting_preference: str
     minrate_na_enabled: bool
     minrate_na_data_rate_kbps: int
@@ -94,6 +88,12 @@ class UnifiWlanConf:
     mac_filter_enabled: bool
     mac_filter_policy: str
 
+    hide_ssid: Optional[bool] = None
+    l2_isolation: Optional[bool] = None
+    mcastenhance_enabled: Optional[bool] = None
+    proxy_arp: Optional[bool] = None
+    fast_roaming_enabled: Optional[bool] = None
+    optimize_iot_wifi_connectivity: Optional[bool] = None
     x_passphrase: Optional[str] = None
     wlan_band: Optional[str] = None
     wlan_bands: List[str] = field(default_factory=list)
@@ -121,7 +121,6 @@ class UnifiWlanConf:
     wpa3_fast_roaming: Optional[bool] = None
     radius_mac_auth_enabled: Optional[bool] = False
     wpa3_enhanced_192: Optional[bool] = False
-
     _extra_fields: Dict[str, Any] = field(default_factory=dict, repr=False)
 
     def to_dict(self) -> Dict[str, Any]:

@@ -1,6 +1,11 @@
 # unifi-controller-api
 
+![PyPI - Downloads](https://img.shields.io/pypi/dw/unifi-controller-api)
+![PyPI - Version](https://img.shields.io/pypi/v/unifi-controller-api)
+
+
 A Python client library for interacting with Ubiquiti UniFi Network Controllers.
+
 
 
 ## Core Features
