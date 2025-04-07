@@ -12,6 +12,8 @@ from .alarm import UnifiAlarm
 from .wlanconf import UnifiWlanConf
 from .rogueap import UnifiRogueAp
 from .networkconf import UnifiNetworkConf
+from .health import UnifiHealth, UnifiSubsystemHealth
+from .portconf import UnifiPortConf
 
 __all__ = [
     "UnifiDevice",
@@ -22,5 +24,8 @@ __all__ = [
     "UnifiAlarm",
     "UnifiWlanConf",
     "UnifiRogueAp",
-    "UnifiNetworkConf"
+    "UnifiNetworkConf",
+    "UnifiHealth",
+    "UnifiSubsystemHealth",
+    "UnifiPortConf"
 ]
