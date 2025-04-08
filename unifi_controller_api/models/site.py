@@ -3,7 +3,7 @@ Models for UniFi sites and related objects.
 """
 
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional, TypedDict
+from typing import Any, Dict, List, Optional
 from ..logging import get_logger
 
 logger = get_logger(__name__)

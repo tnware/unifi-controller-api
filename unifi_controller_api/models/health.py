@@ -3,7 +3,7 @@ Models for UniFi health data and related objects.
 """
 
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 
 @dataclass
