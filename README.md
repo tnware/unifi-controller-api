@@ -1,10 +1,12 @@
 # unifi-controller-api
 
+A Python client library for interacting with Ubiquiti UniFi Network Controllers.
+
 ![PyPI - Downloads](https://img.shields.io/pypi/dw/unifi-controller-api)
 ![PyPI - Version](https://img.shields.io/pypi/v/unifi-controller-api)
 
+> **Warning:** This package is under active development and is subject to breaking changes, incomplete or incorrect documentation, etc.
 
-A Python client library for interacting with Ubiquiti UniFi Network Controllers.
 
 
 
@@ -15,7 +17,7 @@ A Python client library for interacting with Ubiquiti UniFi Network Controllers.
 *   **Automatic Model Mapping:** Translates model codes (e.g., `U7PG2`) to friendly names ("UniFi® AC Pro AP") via the `model_name` attribute.
 *   **Convenience Methods:** Includes helpers for data export (`export_csv`, `export_json`).
 *   **Minimal Dependencies:** Requires only `requests`.
-*   **Python >= 3.8**
+*   **Python >= 3.9**
 
 ---
 
