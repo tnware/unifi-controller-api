@@ -2,18 +2,14 @@
 
 A Python client library for interacting with Ubiquiti UniFi Network Controllers.
 
-![PyPI - Downloads](https://img.shields.io/pypi/dw/unifi-controller-api)
-![PyPI - Version](https://img.shields.io/pypi/v/unifi-controller-api)
+[![PyPI - Downloads](https://img.shields.io/pypi/dw/unifi-controller-api)](https://pypi.org/project/unifi-controller-api/)
+[![PyPI - Version](https://img.shields.io/pypi/v/unifi-controller-api)](https://pypi.org/project/unifi-controller-api/)
 
 > **Warning:** This package is under active development and is subject to breaking changes, incomplete or incorrect documentation, etc.
 
-
-
-
 ## Core Features
 
-*   **Read-Only Access:** Designed for insights and reporting, so no changes can or will be made.
-*   **Structured Data Models:** Parses API responses into typed Python objects (e.g., `UnifiDevice`, `UnifiSite`, `UnifiClient`, `LLDPEntry`, `UnifiWlanConf`).
+*   **Structured Data Models:** Opitionally parses API responses into typed Python objects (e.g., `UnifiDevice`, `UnifiSite`, `UnifiClient`, `LLDPEntry`, `UnifiWlanConf`).
 *   **Automatic Model Mapping:** Translates model codes (e.g., `U7PG2`) to friendly names ("UniFi® AC Pro AP") via the `model_name` attribute.
 *   **Convenience Methods:** Includes helpers for data export (`export_csv`, `export_json`).
 *   **Minimal Dependencies:** Requires only `requests`.
