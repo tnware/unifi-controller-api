@@ -32,11 +32,16 @@ from unifi_controller_api import UnifiController
 
 # 1. Initialize & Authenticate
 controller = UnifiController(
-    controller_url="https://<CONTROLLER_IP_OR_HOSTNAME>", # Use :8443 for dedicated controller
+    controller_url="https://<CONTROLLER_IP_OR_HOSTNAME>", # Use :8443 for UniFi OS, :443 for legacy
     username="<LOCAL_ADMIN_USER>",
     password="<PASSWORD>",
-    is_udm_pro=True, # Set True for UniFi OS devices, False for legacy
-    verify_ssl=False # Or path to CA bundle
+    is_udm_pro=True, # Set True for UniFi OS devices (UDM, Cloud Key Gen2+), False for legacy software/hardware controllers
+    verify_ssl=False, # Or path to your CA bundle, set True if using a valid public certificate
+    auto_model_mapping=True, # Optional: Attempt to map device model codes to friendly names
+    model_db_path=None, # Optional: Path to a custom model database file
+    auth_retry_enabled=True, # Optional: Enable automatic retries on authentication failure
+    auth_retry_count=3, # Optional: Number of authentication retries
+    auth_retry_delay=5 # Optional: Delay in seconds between authentication retries
 )
 
 # 2. Fetch Data (Example: Devices for the 'default' site)
@@ -75,11 +80,15 @@ except Exception as e:
 ## Connectivity Notes
 
 *   Requires direct network access to the controller.
-*   Uses **HTTPS port 443** for UniFi OS devices (UDM, Cloud Key 2.x+, etc.).
-*   Uses **HTTPS port 8443** for legacy controllers (Software, Cloud Key Gen1/Gen2 pre-2.x).
+*   The `controller_url` should include the scheme (https) and port (e.g., `https://192.168.1.1:443` for UniFi OS, `https://unifi.example.com:8443` for older software controllers).
+*   Requires direct network access to the controller.
+*   Uses **HTTPS port 443** by default for UniFi OS devices (UDM, Cloud Key Gen2+).
+*   Uses **HTTPS port 8443** by default for legacy controllers (Software, Cloud Key Gen1).
 *   Requires a **local controller account**, not a UniFi Cloud/SSO account.
-*   Set `is_udm_pro=True` for UniFi OS, `False` for dedicated controller.
-*   Use `verify_ssl=False` or provide a CA bundle path for self-signed certificates.
+*   Set `is_udm_pro=True` when connecting to UniFi OS based controllers (like UDM Pro, UDM SE, Cloud Key Gen2 Plus running UniFi OS). Set to `False` for software-based controllers or older Cloud Keys not running UniFi OS.
+*   For `verify_ssl`: set to `False` for self-signed certificates (common in local deployments), `True` if your controller has a valid, publicly trusted SSL certificate, or provide a path to your CA bundle file.
+*   `auto_model_mapping` (default `True`) automatically translates device model codes (e.g., "U7PG2") to human-readable names (e.g., "UniFi AC Pro AP").
+*   `auth_retry_enabled` (default `True`) allows the client to automatically retry authentication on failure, useful for temporary network issues.
 
 ---
 
