@@ -172,13 +172,44 @@ class UnifiController:
                 verify=self.verify_ssl,
             )
             response.raise_for_status()
-            if response.json().get("meta", {}).get("rc") == "ok":
-                logger.info("Successfully connected to Unifi controller.")
-                logger.debug("Authentication response meta: ok")
-            else:
-                error_msg = "Failed to connect: Response code not ok."
+
+            # Handle both legacy (meta.rc == "ok") and UniFi OS (user object) responses.
+            try:
+                response_data = response.json()
+            except ValueError:
+                error_msg = "Authentication failed: Non-JSON response received."
                 logger.warning(error_msg)
-                logger.debug(f"Authentication response: {response.json()}")
+                raise UnifiAuthenticationError(error_msg)
+
+            # Explicit UniFi OS authentication error payloads (HTTP 200 with error JSON)
+            # Example: {'code': 'AUTHENTICATION_FAILED_INVALID_CREDENTIALS', 'message': 'Invalid username or password', 'level': 'debug'}
+            if (
+                isinstance(response_data, dict)
+                and ("code" in response_data and "message" in response_data)
+                and not response_data.get("meta")
+            ):
+                error_code = response_data.get("code", "AUTHENTICATION_FAILED")
+                error_message = response_data.get(
+                    "message", "Authentication failed.")
+                full_message = f"{error_code}: {error_message}"
+                logger.warning(f"Authentication failed: {full_message}")
+                raise UnifiAuthenticationError(full_message)
+
+            is_unifi_os_response = isinstance(response_data, dict) and (
+                "isSuperAdmin" in response_data or "roles" in response_data
+            )
+            is_legacy_response = (
+                isinstance(response_data, dict)
+                and response_data.get("meta", {}).get("rc") == "ok"
+            )
+
+            if is_unifi_os_response or is_legacy_response:
+                logger.info("Successfully connected to Unifi controller.")
+                logger.debug("Authentication response validated.")
+            else:
+                error_msg = "Failed to connect: Unknown authentication response format."
+                logger.warning(error_msg)
+                logger.debug(f"Authentication response: {response_data}")
                 raise UnifiAuthenticationError(error_msg)
         except requests.exceptions.RequestException as e:
             error_msg = f"Authentication failed: {e}"
@@ -3361,7 +3392,8 @@ class UnifiController:
             Raw API response from the V2 endpoint.
         """
         # V2 path doesn't include site_name, but uses base controller URL
-        uri = f"{self.controller_url.replace(f'/api/s/{site_name}', '')}/v2/api/fingerprint_devices/{fingerprint_source}"
+        uri = (f"{self.controller_url.replace(f'/api/s/{site_name}', '')}"
+               f"/v2/api/fingerprint_devices/{fingerprint_source}")
 
         logger.info(
             f"Fetching fingerprint devices (V2) source {fingerprint_source} via {uri}")
