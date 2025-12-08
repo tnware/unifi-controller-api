@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "unifi-controller-api"
-version = "0.3.0"
+version = "0.3.1"
 description = "A Python library for interacting with the Unifi Controller API"
 readme = "README.md"
 authors = [{ name = "Tyler Woods", email = "tyler@tylermade.net" }]
