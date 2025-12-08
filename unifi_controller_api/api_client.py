@@ -3388,8 +3388,8 @@ class UnifiController:
             Raw API response from the V2 endpoint.
         """
         # V2 path doesn't include site_name, but uses base controller URL
-        uri = f"{self.controller_url.replace(f'/api/s/{site_name}', '')
-                 }/v2/api/fingerprint_devices/{fingerprint_source}"
+        uri = (f"{self.controller_url.replace(f'/api/s/{site_name}', '')}"
+               f"/v2/api/fingerprint_devices/{fingerprint_source}")
 
         logger.info(
             f"Fetching fingerprint devices (V2) source {fingerprint_source} via {uri}")
