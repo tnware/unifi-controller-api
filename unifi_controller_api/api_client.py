@@ -183,7 +183,11 @@ class UnifiController:
 
             # Explicit UniFi OS authentication error payloads (HTTP 200 with error JSON)
             # Example: {'code': 'AUTHENTICATION_FAILED_INVALID_CREDENTIALS', 'message': 'Invalid username or password', 'level': 'debug'}
-            if isinstance(response_data, dict) and ("code" in response_data or "message" in response_data) and not response_data.get("meta"):
+            if (
+                isinstance(response_data, dict)
+                and ("code" in response_data and "message" in response_data)
+                and not response_data.get("meta")
+            ):
                 error_code = response_data.get("code", "AUTHENTICATION_FAILED")
                 error_message = response_data.get(
                     "message", "Authentication failed.")
