@@ -111,6 +111,7 @@ class UnifiController:
             f"Initializing UnifiController with URL: {controller_url}, is_udm_pro: {is_udm_pro}"
         )
         self.controller_url = controller_url
+        self.original_controller_url = controller_url
         self.is_udm_pro = is_udm_pro
         self.session = requests.Session()
         self.verify_ssl = verify_ssl
@@ -156,9 +157,9 @@ class UnifiController:
         self._password = password
 
         if self.is_udm_pro:
-            login_uri = f"{self.controller_url}/api/auth/login"
+            login_uri = f"{self.original_controller_url}/api/auth/login"
             logger.debug(f"Using UDM Pro authentication endpoint: {login_uri}")
-            self.controller_url = f"{self.controller_url}/proxy/network"
+            self.controller_url = f"{self.original_controller_url}/proxy/network"
         else:
             login_uri = f"{self.controller_url}/api/login"
             logger.debug(f"Using legacy authentication endpoint: {login_uri}")
