@@ -2167,6 +2167,55 @@
         },
         "adoptability": "standalone"
     },
+    "UDMA6A8": {
+        "name": "UCG Fiber",
+        "names": {
+            "abbreviation": "UCG Fiber",
+            "fullName": "Cloud Gateway Fiber",
+            "sku": "UCG-Fiber"
+        },
+        "type": "udm",
+        "deviceCapabilities": [
+            "GATEWAY",
+            "SWITCH",
+            "NETWORK_APPLICATION",
+            "PROTECT_APPLICATION"
+        ],
+        "knownUnsupportedFeatures": [
+            "SWITCH_CAP_DOT1X",
+            "SWITCH_CAP_PORT_ISOLATION",
+            "SWITCH_CAP_STORM_CONTROL",
+            "SWITCH_CAP_STP",
+            "SWITCH_CAP_LLDP_MED",
+            "SWITCH_CAP_EGRESS_RATE_LIMIT"
+        ],
+        "subtypes": [
+            "ugw",
+            "usw"
+        ],
+        "diagram": [
+            "01 02 03 04 __ 05 06 07"
+        ],
+        "ports": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "WAN",
+            "eth5": "LAN",
+            "eth6": "WAN2"
+        },
+        "networkGroups": {
+            "eth0": "LAN",
+            "eth1": "LAN",
+            "eth2": "LAN",
+            "eth3": "LAN",
+            "eth4": "WAN",
+            "eth5": "LAN",
+            "eth6": "WAN2"
+        },
+        "adoptability": "standalone"
+    },
     "UDMB": {
         "name": "UAP BeaconHD",
         "names": {
