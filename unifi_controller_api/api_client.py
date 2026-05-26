@@ -373,7 +373,7 @@ class UnifiController:
             logger.error(f"Error decoding JWT payload from TOKEN cookie: {e}")
             return None
 
-    def invoke_get_rest_api_call(self, url, headers=None):
+    def invoke_get_rest_api_call(self, url, headers=None, timeout=None):
         """
         Make a GET request to the UniFi Controller REST API with automatic session renewal.
 
@@ -384,6 +384,8 @@ class UnifiController:
         Args:
             url: The URL to send the GET request to.
             headers: Optional additional headers to include in the request.
+            timeout: Optional timeout in seconds for this request. Overrides
+                the controller-level request_timeout when provided.
 
         Returns:
             The response object on success.
@@ -393,14 +395,17 @@ class UnifiController:
             UnifiAuthenticationError: If re-authentication fails.
         """
         try:
+            request_timeout = (
+                timeout if timeout is not None else getattr(self, 'request_timeout', None)
+            )
             if headers:
                 response = self.session.get(
                     url, headers=headers, verify=self.verify_ssl,
-                    timeout=getattr(self, 'request_timeout', None))
+                    timeout=request_timeout)
             else:
                 response = self.session.get(
                     url, verify=self.verify_ssl,
-                    timeout=getattr(self, 'request_timeout', None))
+                    timeout=request_timeout)
 
             if response.status_code == 401 and self.auth_retry_enabled:
                 if hasattr(self, '_username') and hasattr(self, '_password'):
@@ -421,11 +426,11 @@ class UnifiController:
                             if headers:
                                 response = self.session.get(
                                     url, headers=headers, verify=self.verify_ssl,
-                                    timeout=getattr(self, 'request_timeout', None))
+                                    timeout=request_timeout)
                             else:
                                 response = self.session.get(
                                     url, verify=self.verify_ssl,
-                                    timeout=getattr(self, 'request_timeout', None))
+                                    timeout=request_timeout)
 
                             if response.status_code != 401:
                                 break

@@ -4,10 +4,9 @@ from unifi_controller_api import UnifiController
 
 
 class FakeResponse:
-    status_code = 200
-
-    def __init__(self, payload=None):
+    def __init__(self, payload=None, status_code=200):
         self._payload = payload or {"meta": {"rc": "ok"}}
+        self.status_code = status_code
 
     def json(self):
         return self._payload
@@ -36,12 +35,20 @@ class RecordingSession:
         return FakeResponse()
 
 
-def make_controller(request_timeout: Optional[float] = None):
+class ReauthGetSession(RecordingSession):
+    def get(self, url, **kwargs):
+        self.get_calls.append((url, kwargs))
+        if len(self.get_calls) == 1:
+            return FakeResponse(status_code=401)
+        return FakeResponse({"meta": {"rc": "ok"}, "data": []})
+
+
+def make_controller(request_timeout: Optional[float] = None, session=None):
     controller = UnifiController.__new__(UnifiController)
     controller.controller_url = "https://controller.example"
     controller.original_controller_url = "https://controller.example"
     controller.is_udm_pro = False
-    controller.session = RecordingSession()
+    controller.session = session or RecordingSession()
     controller.verify_ssl = True
     controller.auth_retry_enabled = False
     controller.auth_retry_count = 1
@@ -70,6 +77,33 @@ def test_get_requests_use_configured_request_timeout():
     controller.invoke_get_rest_api_call("https://controller.example/api/self/sites")
 
     assert controller.session.get_calls[0][1]["timeout"] == 7.0
+
+
+def test_get_requests_allow_per_call_timeout_override():
+    controller = make_controller(request_timeout=7.0)
+
+    controller.invoke_get_rest_api_call(
+        "https://controller.example/api/self/sites",
+        timeout=2.5,
+    )
+
+    assert controller.session.get_calls[0][1]["timeout"] == 2.5
+
+
+def test_retried_get_request_keeps_per_call_timeout_override():
+    session = ReauthGetSession()
+    controller = make_controller(request_timeout=7.0, session=session)
+    controller.auth_retry_enabled = True
+    controller.auth_retry_count = 1
+    controller._username = "admin"
+    controller._password = "secret"
+
+    controller.invoke_get_rest_api_call(
+        "https://controller.example/api/self/sites",
+        timeout=2.5,
+    )
+
+    assert [call[1]["timeout"] for call in session.get_calls] == [2.5, 2.5]
 
 
 def test_mutating_requests_use_configured_request_timeout_by_default():
