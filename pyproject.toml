@@ -30,6 +30,11 @@ include = ["unifi_controller_api*"]
 [tool.setuptools.package-data]
 "unifi_controller_api" = ["device-models.json"]
 
+[tool.pytest.ini_options]
+markers = [
+    "live: read-only tests that authenticate to a real UniFi controller when env vars are set",
+]
+
 [project.optional-dependencies]
 dev = [
     "pytest>=6.0",
