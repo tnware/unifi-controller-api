@@ -468,6 +468,12 @@ class UnifiController:
 
         try:
             raw_data = response.json()
+            meta = raw_data.get("meta", {})
+            if meta.get("rc") == "error":
+                error_msg = meta.get("msg") or f"API request to {uri} failed"
+                logger.warning(f"UniFi API error for {uri}: {error_msg}")
+                raise UnifiAPIError(error_msg)
+
             raw_results = raw_data.get("data", [])
             if "data" not in raw_data:
                 error_msg = f"Unexpected API response format for {uri}"
