@@ -24,5 +24,5 @@ def test_packaged_device_model_database_is_valid_json():
     assert any(isinstance(entry, dict) for entry in data.values())
 
 
-def test_distribution_metadata_matches_importable_package():
+def test_distribution_metadata_is_accessible():
     assert importlib.metadata.version('unifi-controller-api')
