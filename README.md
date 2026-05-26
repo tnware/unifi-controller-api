@@ -93,6 +93,27 @@ except Exception as e:
 
 ---
 
+## Optional Live Controller Smoke Tests
+
+The normal test suite uses local fakes and does not contact a controller. To run read-only smoke tests against a real UniFi controller, provide environment variables and run the live-marked tests:
+
+```bash
+export UNIFI_CONTROLLER_URL="https://192.168.1.1"
+export UNIFI_USERNAME="<LOCAL_ADMIN_USER>"
+export UNIFI_PASSWORD="<PASSWORD>"
+export UNIFI_IS_UDM_PRO=true
+export UNIFI_VERIFY_SSL=false
+export UNIFI_REQUEST_TIMEOUT=15
+# Optional: also exercise read-only device listing for one site
+export UNIFI_SITE_NAME=default
+
+python -m pytest -m live -q
+```
+
+The live tests authenticate, list sites, and optionally list devices for `UNIFI_SITE_NAME`. They are skipped automatically when the required environment variables are absent.
+
+---
+
 ## Data Models
 
 The library automatically maps JSON API responses to Python data classes located in `unifi_controller_api.models`. Key models include:
