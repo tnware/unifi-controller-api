@@ -351,8 +351,7 @@ class UnifiController:
 
         parts = unifi_cookie.split('.')
         if len(parts) != 3:
-            logger.warning(
-                f"Invalid JWT structure found in TOKEN cookie: {unifi_cookie}")
+            logger.warning("Invalid JWT structure found in TOKEN cookie.")
             return None
 
         try:
