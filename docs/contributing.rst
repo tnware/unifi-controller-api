@@ -52,7 +52,7 @@ This project uses ruff for code linting. Run linting with:
     ruff check .
 
 Documentation
-------------
+-------------
 
 Build the documentation locally to preview your changes:
 
@@ -75,7 +75,7 @@ Pull Request Process
 5. Describe your changes in detail
 
 Documentation Standards
-----------------------
+-----------------------
 
 - Use Google-style docstrings for Python code
 - Include type annotations where appropriate

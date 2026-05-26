@@ -12,7 +12,7 @@ The UniFi Controller API package is organized into several modules:
 * **Exceptions** - Custom exceptions for error handling
 
 Main Components
-==============
+===============
 
 .. autosummary::
    :nosignatures:
@@ -25,7 +25,7 @@ Main Components
    unifi_controller_api.utils
 
 Getting Started
-==============
+===============
 
 The main entry point is the :class:`unifi_controller_api.UnifiController` class:
 
@@ -50,5 +50,5 @@ The main entry point is the :class:`unifi_controller_api.UnifiController` class:
     devices = controller.get_unifi_site_device('default')
 
     # Export devices to CSV
-    from unifi_controller_api.export import export_to_csv
-    export_to_csv(devices, "devices.csv")
+    from unifi_controller_api.export import export_csv
+    export_csv(devices, "devices.csv")
