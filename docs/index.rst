@@ -62,7 +62,8 @@ Basic usage:
         model_db_path=None, # Optional: Path to a custom model database file
         auth_retry_enabled=True, # Optional: Enable automatic retries on authentication failure
         auth_retry_count=3, # Optional: Number of authentication retries
-        auth_retry_delay=5 # Optional: Delay in seconds between authentication retries
+        auth_retry_delay=5, # Optional: Delay in seconds between authentication retries
+        request_timeout=30 # Optional: Timeout in seconds for controller HTTP requests
     )
 
     # Example: Fetch devices for the 'default' site

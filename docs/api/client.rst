@@ -30,7 +30,8 @@ Connecting to a Controller
         model_db_path=None, # Optional: Path to a custom model database file
         auth_retry_enabled=True,
         auth_retry_count=3,
-        auth_retry_delay=1
+        auth_retry_delay=1,
+        request_timeout=30
     )
 
 Getting Devices at a Site
