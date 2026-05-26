@@ -72,6 +72,17 @@ def test_get_requests_use_configured_request_timeout():
     assert controller.session.get_calls[0][1]["timeout"] == 7.0
 
 
+def test_get_requests_allow_per_call_timeout_override():
+    controller = make_controller(request_timeout=7.0)
+
+    controller.invoke_get_rest_api_call(
+        "https://controller.example/api/self/sites",
+        timeout=2.5,
+    )
+
+    assert controller.session.get_calls[0][1]["timeout"] == 2.5
+
+
 def test_mutating_requests_use_configured_request_timeout_by_default():
     controller = make_controller(request_timeout=3.0)
 
