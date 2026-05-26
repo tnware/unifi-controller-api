@@ -37,7 +37,7 @@ software. It provides a Pythonic interface to query devices, clients, and networ
 from your UniFi network.
 
 Quick Start
-==========
+===========
 
 Installation:
 

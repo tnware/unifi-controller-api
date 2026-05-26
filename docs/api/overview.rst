@@ -12,7 +12,7 @@ The UniFi Controller API package is organized into several modules:
 * **Exceptions** - Custom exceptions for error handling
 
 Main Components
-==============
+===============
 
 .. autosummary::
    :nosignatures:
@@ -25,7 +25,7 @@ Main Components
    unifi_controller_api.utils
 
 Getting Started
-==============
+===============
 
 The main entry point is the :class:`unifi_controller_api.UnifiController` class:
 

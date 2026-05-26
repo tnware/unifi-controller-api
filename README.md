@@ -9,7 +9,7 @@ A Python client library for interacting with Ubiquiti UniFi Network Controllers.
 
 ## Core Features
 
-*   **Structured Data Models:** Opitionally parses API responses into typed Python objects (e.g., `UnifiDevice`, `UnifiSite`, `UnifiClient`, `LLDPEntry`, `UnifiWlanConf`).
+*   **Structured Data Models:** Optionally parses API responses into typed Python objects (e.g., `UnifiDevice`, `UnifiSite`, `UnifiClient`, `LLDPEntry`, `UnifiWlanConf`).
 *   **Automatic Model Mapping:** Translates model codes (e.g., `U7PG2`) to friendly names ("UniFi® AC Pro AP") via the `model_name` attribute.
 *   **Convenience Methods:** Includes helpers for data export (`export_csv`, `export_json`).
 *   **Minimal Dependencies:** Requires only `requests`.
@@ -32,7 +32,7 @@ from unifi_controller_api import UnifiController
 
 # 1. Initialize & Authenticate
 controller = UnifiController(
-    controller_url="https://<CONTROLLER_IP_OR_HOSTNAME>", # Use :8443 for UniFi OS, :443 for legacy
+    controller_url="https://<CONTROLLER_IP_OR_HOSTNAME>", # Use :443 for UniFi OS, :8443 for legacy
     username="<LOCAL_ADMIN_USER>",
     password="<PASSWORD>",
     is_udm_pro=True, # Set True for UniFi OS devices (UDM, Cloud Key Gen2+), False for legacy software/hardware controllers
@@ -47,7 +47,7 @@ controller = UnifiController(
 # 2. Fetch Data (Example: Devices for the 'default' site)
 site_name = "default" # Use the internal site name
 try:
-    devices = controller.get_unifi_site_device(site_name=site_name, detailed=True)
+    devices = controller.get_unifi_site_device(site_name=site_name, detailed=True, raw=False)
 
     # 3. Use the Typed Data
     for device in devices:
@@ -59,13 +59,13 @@ except Exception as e:
     print(f"Error fetching devices for site '{site_name}': {e}")
 
 # Other available methods:
-# sites = controller.get_unifi_site()
-# clients = controller.get_clients(site_name)
-# wlans = controller.get_wlan_conf(site_name)
-# alarms = controller.get_alarms(site_name)
-# events = controller.get_events(site_name)
-# rogue_aps = controller.get_rogue_aps(site_name)
-# networks = controller.get_network_conf(site_name)
+# sites = controller.get_unifi_site(include_health=False)
+# clients = controller.get_unifi_site_client(site_name)
+# wlans = controller.get_unifi_site_wlanconf(site_name)
+# alarms = controller.get_unifi_site_alarm(site_name)
+# events = controller.get_unifi_site_event(site_name)
+# rogue_aps = controller.get_unifi_site_rogueap(site_name)
+# networks = controller.get_unifi_site_networkconf(site_name)
 # report = controller.devices_report(site_names=['site1', 'site2'])
 
 # Exporting data:

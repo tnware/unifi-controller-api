@@ -1,11 +1,11 @@
-===================
+=====================
 Utilities and Helpers
-===================
+=====================
 
 The UniFi Controller API includes several utility modules to help with common tasks.
 
 Logging Utilities
-================
+=================
 
 .. automodule:: unifi_controller_api.logging
    :members:
@@ -13,7 +13,7 @@ Logging Utilities
    :show-inheritance:
 
 Exception Handling
-================
+==================
 
 .. automodule:: unifi_controller_api.exceptions
    :members:
@@ -21,7 +21,7 @@ Exception Handling
    :show-inheritance:
 
 Utility Functions
-===============
+=================
 
 .. automodule:: unifi_controller_api.utils
    :members:
@@ -29,10 +29,10 @@ Utility Functions
    :show-inheritance:
 
 Common Usage Examples
-===================
+=====================
 
 Setting Up Logging
-----------------
+------------------
 
 .. code-block:: python
 
@@ -46,7 +46,7 @@ Setting Up Logging
     logger.error("Failed to connect")
 
 Handling Exceptions
------------------
+-------------------
 
 .. code-block:: python
 

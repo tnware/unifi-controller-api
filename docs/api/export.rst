@@ -10,7 +10,7 @@ The UniFi Controller API includes utilities for exporting data to various format
    :show-inheritance:
 
 Supported Export Formats
-=======================
+========================
 
 The API supports exporting data to the following formats:
 
@@ -19,7 +19,7 @@ The API supports exporting data to the following formats:
 * **Python Dictionaries** - Convert data to Python dictionaries for custom processing.
 
 Usage Examples
-=============
+==============
 
 The `automodule` directive above will list all available functions. Key functions include:
 
@@ -28,7 +28,7 @@ The `automodule` directive above will list all available functions. Key function
 *   `to_dict_list`: Converts a list of model objects into a list of Python dictionaries. This can be useful for custom export logic or further manipulation before exporting.
 
 Exporting to CSV
----------------
+----------------
 
 .. code-block:: python
 
@@ -57,7 +57,7 @@ Exporting to CSV
         print(f"An error occurred: {e}")
 
 Exporting to JSON
-----------------
+-----------------
 
 .. code-block:: python
 

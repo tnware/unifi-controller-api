@@ -5,7 +5,7 @@ Examples
 This page provides examples of common usage patterns for the UniFi Controller API.
 
 Basic Connection
-===============
+================
 
 .. code-block:: python
 
@@ -45,7 +45,7 @@ Basic Connection
     TARGET_SITE_NAME = "default"
 
 Working with Sites
-=================
+==================
 
 Get all sites:
 
@@ -91,7 +91,7 @@ Get all sites:
 
 
 Working with Devices
-===================
+====================
 
 Get all devices at a site:
 
@@ -131,7 +131,7 @@ Get all devices at a site:
 
 
 Working with Clients
-==================
+====================
 
 Get all clients at a site:
 
@@ -160,7 +160,7 @@ Get all clients at a site:
 
 
 Network Configuration
-===================
+=====================
 
 Get network configurations:
 
@@ -201,7 +201,7 @@ Get network configurations:
         print(f"An unexpected error occurred: {e}")
 
 Exporting Data
-=============
+==============
 
 Export data to various formats. Ensure data is fetched as model objects (`raw=False`).
 

@@ -8,10 +8,9 @@ version = "0.3.2"
 description = "A Python library for interacting with the Unifi Controller API"
 readme = "README.md"
 authors = [{ name = "Tyler Woods", email = "tyler@tylermade.net" }]
-license = { text = "MIT" }
+license = "MIT"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Topic :: System :: Networking :: Monitoring",
     "Topic :: Software Development :: Libraries :: Python Modules",
@@ -25,11 +24,11 @@ dependencies = ["requests"]
 "Homepage" = "https://github.com/tnware/unifi-controller-api"
 "Bug Tracker" = "https://github.com/tnware/unifi-controller-api/issues"
 
-[tool.setuptools]
-packages = ["unifi_controller_api"]
+[tool.setuptools.packages.find]
+include = ["unifi_controller_api*"]
 
 [tool.setuptools.package-data]
-"unifi_controller_api" = ["models/*", "device-models.json"]
+"unifi_controller_api" = ["device-models.json"]
 
 [project.optional-dependencies]
 dev = [
