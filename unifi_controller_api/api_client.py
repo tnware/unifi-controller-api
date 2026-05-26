@@ -76,6 +76,7 @@ class UnifiController:
         auth_retry_enabled=True,
         auth_retry_count=3,
         auth_retry_delay=1,
+        request_timeout=None,
     ):
         """
         Initialize the Unifi Controller client and authenticate.
@@ -101,6 +102,9 @@ class UnifiController:
                            Defaults to 3.
             auth_retry_delay: Delay in seconds between retry attempts (0.1-30).
                            Defaults to 1.
+            request_timeout: Optional timeout in seconds to apply to controller
+                           HTTP requests. Defaults to None to preserve the
+                           requests library behavior of waiting indefinitely.
         """
         if auth_retry_count < 1 or auth_retry_count > 10:
             raise ValueError("auth_retry_count must be between 1 and 10")
@@ -120,6 +124,7 @@ class UnifiController:
         self.auth_retry_enabled = auth_retry_enabled
         self.auth_retry_count = auth_retry_count
         self.auth_retry_delay = auth_retry_delay
+        self.request_timeout = request_timeout
 
         if model_db_path is None:
             self.model_db_path = os.path.join(
@@ -171,6 +176,7 @@ class UnifiController:
                 login_uri,
                 json={"username": username, "password": password},
                 verify=self.verify_ssl,
+                timeout=self.request_timeout,
             )
             response.raise_for_status()
 
@@ -223,7 +229,7 @@ class UnifiController:
         url: str,
         json_payload: Optional[Dict[str, Any]] = None,
         headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None
+        timeout: Optional[float] = None
     ) -> requests.Response:
         """
         Make an API request with the specified method, handling potential re-authentication.
@@ -251,7 +257,7 @@ class UnifiController:
 
         request_kwargs = {
             'verify': self.verify_ssl,
-            'timeout': timeout
+            'timeout': timeout if timeout is not None else getattr(self, 'request_timeout', None)
         }
 
         if headers:
@@ -389,9 +395,12 @@ class UnifiController:
         try:
             if headers:
                 response = self.session.get(
-                    url, headers=headers, verify=self.verify_ssl)
+                    url, headers=headers, verify=self.verify_ssl,
+                    timeout=getattr(self, 'request_timeout', None))
             else:
-                response = self.session.get(url, verify=self.verify_ssl)
+                response = self.session.get(
+                    url, verify=self.verify_ssl,
+                    timeout=getattr(self, 'request_timeout', None))
 
             if response.status_code == 401 and self.auth_retry_enabled:
                 if hasattr(self, '_username') and hasattr(self, '_password'):
@@ -411,10 +420,12 @@ class UnifiController:
 
                             if headers:
                                 response = self.session.get(
-                                    url, headers=headers, verify=self.verify_ssl)
+                                    url, headers=headers, verify=self.verify_ssl,
+                                    timeout=getattr(self, 'request_timeout', None))
                             else:
                                 response = self.session.get(
-                                    url, verify=self.verify_ssl)
+                                    url, verify=self.verify_ssl,
+                                    timeout=getattr(self, 'request_timeout', None))
 
                             if response.status_code != 401:
                                 break
