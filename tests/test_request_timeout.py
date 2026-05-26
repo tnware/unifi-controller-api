@@ -1,3 +1,5 @@
+from typing import Optional
+
 from unifi_controller_api import UnifiController
 
 
@@ -34,7 +36,7 @@ class RecordingSession:
         return FakeResponse()
 
 
-def make_controller(request_timeout: float | None = None):
+def make_controller(request_timeout: Optional[float] = None):
     controller = UnifiController.__new__(UnifiController)
     controller.controller_url = "https://controller.example"
     controller.original_controller_url = "https://controller.example"
