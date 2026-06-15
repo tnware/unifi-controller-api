@@ -473,7 +473,7 @@ class UnifiController:
             raise
 
     def _process_api_response(
-        self, response: Optional[requests.Response], uri: str
+        self, response: Optional[requests.Response], uri: str, method: str = "GET"
     ) -> List[Dict[str, Any]]:
         """
         Process API response and handle common error cases.
@@ -481,6 +481,7 @@ class UnifiController:
         Args:
             response: Response from API call
             uri: URI that was called
+            method: HTTP method used for the request, for error context
 
         Returns:
             List of data items from the response
@@ -500,7 +501,7 @@ class UnifiController:
                 logger.warning(f"UniFi API error for {uri}: {error_msg}")
                 raise UnifiAPIError(
                     error_msg,
-                    method="GET",
+                    method=method,
                     url=uri,
                     response=response,
                     response_json=raw_data,
@@ -1160,7 +1161,7 @@ class UnifiController:
         uri = f"{self.controller_url}/api/s/{site_name}/rest/firewallrule"
         logger.info(f"Creating firewall rule for site '{site_name}' at {uri}")
         response = self._invoke_api_call("POST", uri, json_payload=payload)
-        raw_results = self._process_api_response(response, uri)
+        raw_results = self._process_api_response(response, uri, method="POST")
         return self._map_firewall_rules(raw_results, raw)
 
     def update_unifi_site_firewallrule(
@@ -1184,7 +1185,7 @@ class UnifiController:
             f"Updating firewall rule '{firewall_rule_id}' for site '{site_name}' at {uri}"
         )
         response = self._invoke_api_call("PUT", uri, json_payload=payload)
-        raw_results = self._process_api_response(response, uri)
+        raw_results = self._process_api_response(response, uri, method="PUT")
         return self._map_firewall_rules(raw_results, raw)
 
     def delete_unifi_site_firewallrule(
@@ -1200,7 +1201,7 @@ class UnifiController:
             f"Deleting firewall rule '{firewall_rule_id}' for site '{site_name}' at {uri}"
         )
         response = self._invoke_api_call("DELETE", uri)
-        return self._process_api_response(response, uri)
+        return self._process_api_response(response, uri, method="DELETE")
 
     def normalize_mac(self, mac_address):
         """

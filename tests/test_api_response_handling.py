@@ -33,3 +33,16 @@ def test_process_api_response_rejects_missing_data_key():
 def test_process_api_response_raises_api_error_for_unifi_error_payload():
     with pytest.raises(UnifiAPIError, match="api.err.Invalid"):
         process({"meta": {"rc": "error", "msg": "api.err.Invalid"}, "data": []})
+
+
+def test_process_api_response_preserves_request_method_for_error_payload():
+    controller = UnifiController.__new__(UnifiController)
+    response = cast(
+        Any,
+        FakeResponse({"meta": {"rc": "error", "msg": "api.err.Invalid"}, "data": []}),
+    )
+
+    with pytest.raises(UnifiAPIError) as excinfo:
+        controller._process_api_response(response, "/api/test", method="POST")
+
+    assert excinfo.value.method == "POST"
