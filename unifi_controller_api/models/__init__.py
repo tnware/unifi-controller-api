@@ -40,6 +40,7 @@ from .alarm import UnifiAlarm
 from .wlanconf import UnifiWlanConf
 from .rogueap import UnifiRogueAp
 from .networkconf import UnifiNetworkConf
+from .firewall_rule import UnifiFirewallRule
 from .health import UnifiHealth, UnifiSubsystemHealth
 from .portconf import UnifiPortConf
 
@@ -53,6 +54,7 @@ __all__ = [
     "UnifiWlanConf",
     "UnifiRogueAp",
     "UnifiNetworkConf",
+    "UnifiFirewallRule",
     "UnifiHealth",
     "UnifiSubsystemHealth",
     "UnifiPortConf"

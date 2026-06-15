@@ -67,6 +67,7 @@ except Exception as e:
 # events = controller.get_unifi_site_event(site_name)
 # rogue_aps = controller.get_unifi_site_rogueap(site_name)
 # networks = controller.get_unifi_site_networkconf(site_name)
+# firewall_rules = controller.get_unifi_site_firewallrule(site_name)
 # report = controller.devices_report(site_names=['site1', 'site2'])
 
 # Exporting data:
@@ -93,6 +94,39 @@ except Exception as e:
 
 ---
 
+## Firewall Rules
+
+Firewall rule support follows the same raw/typed pattern as the rest of the client:
+
+```python
+rules = controller.get_unifi_site_firewallrule("default", raw=False)
+for rule in rules:
+    print(rule.name, rule.ruleset, rule.action, rule.protocol, rule.dst_port)
+```
+
+Mutating helpers are available for callers that deliberately want to manage rules:
+
+```python
+controller.create_unifi_site_firewallrule(
+    "default",
+    {
+        "name": "Block example traffic",
+        "enabled": True,
+        "action": "drop",
+        "ruleset": "WAN_OUT",
+        "protocol": "tcp",
+        "dst_port": "25",
+    },
+)
+```
+
+> **Caution:** Firewall rule endpoints are private UniFi Network APIs. Valid fields,
+> rule index conventions, and controller-side validation can vary across UniFi
+> Network versions. Prefer read-only listing first, keep writes explicit, and inspect
+> `UnifiAPIError.response_json` when the controller rejects a payload.
+
+---
+
 ## Data Models
 
 The library automatically maps JSON API responses to Python data classes located in `unifi_controller_api.models`. Key models include:
@@ -103,6 +137,7 @@ The library automatically maps JSON API responses to Python data classes located
 *   `UnifiClient`: Represents a connected client (wired or wireless).
 *   `UnifiWlanConf`: Represents a Wireless LAN configuration.
 *   `UnifiNetworkConf`: Represents a Network configuration.
+*   `UnifiFirewallRule`: Represents a firewall rule.
 *   `UnifiAlarm`: Represents a controller alarm.
 *   `UnifiEvent`: Represents a controller event.
 *   `UnifiRogueAp`: Represents a detected rogue access point.

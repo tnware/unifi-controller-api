@@ -3,7 +3,13 @@ import json
 from importlib import resources
 
 import unifi_controller_api as api
-from unifi_controller_api.models import UnifiDevice, UnifiHealth, UnifiPortConf, UnifiSite
+from unifi_controller_api.models import (
+    UnifiDevice,
+    UnifiFirewallRule,
+    UnifiHealth,
+    UnifiPortConf,
+    UnifiSite,
+)
 
 
 def test_public_imports_are_available():
@@ -12,6 +18,7 @@ def test_public_imports_are_available():
     assert UnifiDevice is not None
     assert UnifiHealth is not None
     assert UnifiPortConf is not None
+    assert api.UnifiFirewallRule is UnifiFirewallRule
 
 
 def test_packaged_device_model_database_is_valid_json():
