@@ -8,7 +8,8 @@ allowing read-only access to sites, devices, and other network information.
 from .api_client import UnifiController
 from .models import (
     UnifiSite, UnifiDevice, LLDPEntry, UnifiClient,
-    UnifiEvent, UnifiAlarm, UnifiWlanConf, UnifiRogueAp, UnifiNetworkConf
+    UnifiEvent, UnifiAlarm, UnifiWlanConf, UnifiRogueAp, UnifiNetworkConf,
+    UnifiFirewallRule
 )
 from .export import export_csv, export_json, to_dict_list
 from .exceptions import (
@@ -30,6 +31,7 @@ __all__ = [
     "UnifiWlanConf",
     "UnifiRogueAp",
     "UnifiNetworkConf",
+    "UnifiFirewallRule",
     "export_csv",
     "export_json",
     "to_dict_list",

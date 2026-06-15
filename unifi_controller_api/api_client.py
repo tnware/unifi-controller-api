@@ -17,6 +17,7 @@ from .models.alarm import UnifiAlarm
 from .models.wlanconf import UnifiWlanConf
 from .models.rogueap import UnifiRogueAp
 from .models.networkconf import UnifiNetworkConf
+from .models.firewall_rule import UnifiFirewallRule
 from .models.health import UnifiHealth, UnifiSubsystemHealth
 from .models.portconf import UnifiPortConf
 from .logging import get_logger
@@ -337,7 +338,12 @@ class UnifiController:
             if not isinstance(e, UnifiAuthenticationError):
                 error_msg = f"API {method} request to {url} failed: {str(e)}"
                 logger.error(error_msg)
-                raise UnifiAPIError(error_msg) from e
+                raise UnifiAPIError(
+                    error_msg,
+                    method=method,
+                    url=url,
+                    response=getattr(e, "response", None),
+                ) from e
             else:
                 raise
 
@@ -458,11 +464,16 @@ class UnifiController:
             if not isinstance(e, UnifiAuthenticationError):
                 error_msg = f"API GET request to {url} failed: {str(e)}"
                 logger.error(error_msg)
-                raise UnifiAPIError(error_msg) from e
+                raise UnifiAPIError(
+                    error_msg,
+                    method="GET",
+                    url=url,
+                    response=getattr(e, "response", None),
+                ) from e
             raise
 
     def _process_api_response(
-        self, response: Optional[requests.Response], uri: str
+        self, response: Optional[requests.Response], uri: str, method: str = "GET"
     ) -> List[Dict[str, Any]]:
         """
         Process API response and handle common error cases.
@@ -470,6 +481,7 @@ class UnifiController:
         Args:
             response: Response from API call
             uri: URI that was called
+            method: HTTP method used for the request, for error context
 
         Returns:
             List of data items from the response
@@ -487,7 +499,13 @@ class UnifiController:
             if meta.get("rc") == "error":
                 error_msg = meta.get("msg") or f"API request to {uri} failed"
                 logger.warning(f"UniFi API error for {uri}: {error_msg}")
-                raise UnifiAPIError(error_msg)
+                raise UnifiAPIError(
+                    error_msg,
+                    method=method,
+                    url=uri,
+                    response=response,
+                    response_json=raw_data,
+                )
 
             raw_results = raw_data.get("data", [])
             if "data" not in raw_data:
@@ -1080,6 +1098,110 @@ class UnifiController:
         else:
             logger.debug("Returning raw network configuration data.")
             return raw_results
+
+    def _map_firewall_rules(
+        self, raw_results: List[Dict[str, Any]], raw: bool
+    ) -> Union[List[Dict[str, Any]], List[UnifiFirewallRule]]:
+        if raw:
+            logger.debug("Returning raw firewall rule data.")
+            return raw_results
+
+        firewall_rules = []
+        for rule_data in raw_results:
+            try:
+                model_fields, extra_fields = map_api_data_to_model(
+                    rule_data, UnifiFirewallRule
+                )
+                rule = UnifiFirewallRule(**model_fields)
+                rule._extra_fields = extra_fields
+                firewall_rules.append(rule)
+            except Exception as e:
+                logger.error(
+                    f"Error creating UnifiFirewallRule model from data: {rule_data}. Error: {e}"
+                )
+        logger.debug(
+            f"Returning {len(firewall_rules)} mapped UnifiFirewallRule objects."
+        )
+        return firewall_rules
+
+    def get_unifi_site_firewallrule(
+        self, site_name: str, firewall_rule_id: Optional[str] = None, raw: bool = True
+    ) -> Union[List[Dict[str, Any]], List[UnifiFirewallRule]]:
+        """Get firewall rules for a UniFi site.
+
+        Retrieves firewall rules from ``/api/s/{site_name}/rest/firewallrule``.
+        If ``firewall_rule_id`` is provided, fetches a single rule by ID. This
+        method uses UniFi's private API; returned fields and valid values can
+        vary by controller version.
+        """
+        uri_suffix = f"/{firewall_rule_id}" if firewall_rule_id else ""
+        uri = f"{self.controller_url}/api/s/{site_name}/rest/firewallrule{uri_suffix}"
+        logger.info(
+            f"Fetching firewall rule(s) for site '{site_name}' from {uri}"
+        )
+        response = self.invoke_get_rest_api_call(uri)
+        raw_results = self._process_api_response(response, uri)
+        return self._map_firewall_rules(raw_results, raw)
+
+    def create_unifi_site_firewallrule(
+        self,
+        site_name: str,
+        rule_data: Optional[Dict[str, Any]] = None,
+        raw: bool = True,
+        **rule_fields: Any,
+    ) -> Union[List[Dict[str, Any]], List[UnifiFirewallRule]]:
+        """Create a firewall rule for a UniFi site.
+
+        This is a mutating operation. Pass a dictionary of UniFi firewall rule
+        fields via ``rule_data`` and/or keyword fields. Keyword fields override
+        duplicate keys from ``rule_data``.
+        """
+        payload = dict(rule_data or {})
+        payload.update(rule_fields)
+        uri = f"{self.controller_url}/api/s/{site_name}/rest/firewallrule"
+        logger.info(f"Creating firewall rule for site '{site_name}' at {uri}")
+        response = self._invoke_api_call("POST", uri, json_payload=payload)
+        raw_results = self._process_api_response(response, uri, method="POST")
+        return self._map_firewall_rules(raw_results, raw)
+
+    def update_unifi_site_firewallrule(
+        self,
+        site_name: str,
+        firewall_rule_id: str,
+        rule_data: Optional[Dict[str, Any]] = None,
+        raw: bool = True,
+        **rule_fields: Any,
+    ) -> Union[List[Dict[str, Any]], List[UnifiFirewallRule]]:
+        """Update a firewall rule for a UniFi site.
+
+        This is a mutating operation. Pass the rule ID and a dictionary of
+        fields via ``rule_data`` and/or keyword fields. Keyword fields override
+        duplicate keys from ``rule_data``.
+        """
+        payload = dict(rule_data or {})
+        payload.update(rule_fields)
+        uri = f"{self.controller_url}/api/s/{site_name}/rest/firewallrule/{firewall_rule_id}"
+        logger.info(
+            f"Updating firewall rule '{firewall_rule_id}' for site '{site_name}' at {uri}"
+        )
+        response = self._invoke_api_call("PUT", uri, json_payload=payload)
+        raw_results = self._process_api_response(response, uri, method="PUT")
+        return self._map_firewall_rules(raw_results, raw)
+
+    def delete_unifi_site_firewallrule(
+        self, site_name: str, firewall_rule_id: str
+    ) -> List[Dict[str, Any]]:
+        """Delete a firewall rule for a UniFi site.
+
+        This is a mutating operation. Returns the controller's raw ``data``
+        payload for consistency with other low-level operations.
+        """
+        uri = f"{self.controller_url}/api/s/{site_name}/rest/firewallrule/{firewall_rule_id}"
+        logger.info(
+            f"Deleting firewall rule '{firewall_rule_id}' for site '{site_name}' at {uri}"
+        )
+        response = self._invoke_api_call("DELETE", uri)
+        return self._process_api_response(response, uri, method="DELETE")
 
     def normalize_mac(self, mac_address):
         """
